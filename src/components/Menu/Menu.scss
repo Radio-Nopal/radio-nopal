@@ -1,0 +1,10 @@
+.menu {
+    background-color: coral;
+    transition: left 1s;
+    &--hidden {
+        left: 100vw;
+    }
+    &--show {
+        left: 0vw;
+    }
+}

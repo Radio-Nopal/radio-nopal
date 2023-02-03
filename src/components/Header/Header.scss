@@ -1,0 +1,65 @@
+.header {
+    $self: &;
+    position: sticky;
+    top: 0px;
+    &__now-playing {
+        span {
+            font-family: 'Birch Std';
+        }
+    }
+    &__search-box {
+        width: 100%;
+    }
+
+    #{ $self }__nopal {
+        display: none;
+    }
+
+    &__sticky {
+        #{ $self }__col {
+            display: flex;
+            justify-content: space-between;
+        }
+        @screen md {
+            position: absolute;
+   
+            #{ $self }__col {
+                display: block;
+            }
+
+        }
+    }   
+    &--collapsed {
+        min-height: 256px;
+        @screen md { 
+            min-height: 0px;
+        }
+   
+        #{ $self }__sticky {
+            animation: 
+            bg-animation 3s ease infinite alternate, 
+            collapse-animation 1s normal forwards;
+            
+            #{ $self }__col {
+                display: flex;
+                justify-content: space-between;
+            }
+            @screen md {
+                #{ $self }__nopal {
+                    display: inline;
+                }
+            }
+        }
+    }
+    @keyframes collapse-animation {
+        0% {
+          background-color: coral;
+        }
+        50% {
+            background-color: rgba(128,128,128,1);
+        }
+        100% {
+          background-color: coral;
+        }
+    }
+}

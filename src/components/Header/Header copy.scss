@@ -1,0 +1,59 @@
+.header {
+    $self: &;
+    min-height: 370px;
+    h1 { 
+        font-family: 'Circular Std Black';
+    }
+    h2 {
+        font-family: 'Circular Std Black';
+    }
+    &__now-playing {
+        span {
+            font-family: 'Birch Std';
+        }
+    }
+    &__volume-slider {
+        width: 100%;
+    }
+    &__nopal {
+        display: none;
+    }
+    &--expanded {
+        #{ $self }__sticky {
+            background: none;
+            position: absolute;
+        }
+    }
+    
+    &--collapsed {
+        #{ $self }__sticky {
+            position: fixed;
+            animation: 
+            bg-animation 3s ease infinite alternate, 
+            collapse-animation 0.1s normal forwards;
+            #{ $self }__logo {
+                display: none;
+            }
+            #{ $self }__col {
+                display: flex;
+                justify-content: space-between;
+            }
+            @screen md {
+                #{ $self }__nopal {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    @keyframes collapse-animation {
+        0% {
+          background-color: rgba(128,128,128,1);
+        }
+        50% {
+            background-color: rgba(128,128,128,1);
+        }
+        100% {
+          background-color: rgba(255,255,255,1);
+        }
+    }
+}
