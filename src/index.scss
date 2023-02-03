@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Circular Std Book';
+  ::selection {
+    background: #A792FF;
+    color: white;
+  }
+}
+
+@font-face {
+  font-family: 'Circular Std Black';
+  src: url('./assets/fonts/CircularStd/CircularStd-Black.woff2') format('woff2'),
+    url('./assets/fonts/CircularStd/CircularStd-Black.woff') format('woff'),
+    url('./assets/fonts/CircularStd/CircularStd-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Circular Std Book';
+  src: url('./assets/fonts/CircularStd/CircularStd-Book.woff2') format('woff2'),
+    url('./assets/fonts/CircularStd/CircularStd-Book.woff') format('woff'),
+    url('./assets/fonts/CircularStd/CircularStd-Book.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Birch Std';
+  src: url('./assets/fonts/BirchStd/BirchStd.woff2') format('woff2'),
+    url('./assets/fonts/BirchStd/BirchStd.woff') format('woff'),
+    url('./assets/fonts/BirchStd/BirchStd.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes background-color-animation {
+  0% {
+    background: #f9f8de;
+  }
+  10% {
+    background: #ddf3ef;
+  }
+  20% {
+    background: #fce5e7;
+  }
+  35% {
+    background: #dde6e0;
+  }
+  40% {
+    background: #dbffe4;
+  }
+  50% {
+    background: #dde6e0;
+  }
+  60% {
+    background: #dbdcff;
+  }
+  70% {
+    background: #dbffe4;
+  }
+  75% {
+    background: #fce5e7;
+  }
+  80% {
+    background: #f9f8de;
+  }
+  95% {
+    background: #dbdcff;
+  }
+}
+
+.invert-svg {
+  filter: invert(1);
+}
