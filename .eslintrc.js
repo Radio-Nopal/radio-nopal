@@ -18,6 +18,9 @@ module.exports = {
   ],
   rules: {
     'react/prop-types': 'off',
+    camelcase: 'off',
+    'react/jsx-no-constructed-context-values': 'off',
+    'no-underscore-dangle': 'off',
     'jsx-a11y/media-has-caption': 'off',
   },
 };

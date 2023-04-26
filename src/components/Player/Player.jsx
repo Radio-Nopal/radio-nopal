@@ -1,21 +1,43 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import ReactGA from 'react-ga';
+import { store } from '../../store';
 import './Player.scss';
 
 function Player() {
-  const [playing, setPlaying] = useState(false);
+  const { state, dispatch } = useContext(store);
+  const { playing, isOnline } = state;
 
   const handlePlayerClick = () => {
+    if (!isOnline) return;
     if (!playing) {
-      document.getElementById('audio-player').play();
-      setPlaying(true);
+      ReactGA.event({
+        category: 'Botón Play',
+        action: 'Hizo click en botón de play',
+      });
+      try {
+        document.getElementById('audio-player').play();
+      } catch (e) {
+        return;
+      }
+      dispatch({ type: 'playing', payload: true });
     } else {
-      document.getElementById('audio-player').pause();
-      setPlaying(false);
+      try {
+        document.getElementById('audio-player').pause();
+      } catch (e) {
+        return;
+      }
+      dispatch({ type: 'playing', payload: false });
     }
   };
 
   return (
-    <button type="button" className={`player ${playing ? 'player--playing' : ''}`} onClick={handlePlayerClick}>
+    <button
+      type="button"
+      className={`player ${playing ? 'player--playing' : ''} ${
+        isOnline ? '' : 'player--isOffline'
+      }`}
+      onClick={handlePlayerClick}
+    >
       <div className="player__border" />
       <svg />
     </button>

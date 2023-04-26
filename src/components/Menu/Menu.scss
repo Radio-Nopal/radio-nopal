@@ -1,10 +1,14 @@
 .menu {
-    background-color: coral;
-    transition: left 1s;
+    animation: background-color-animation 20s 0.08s infinite;
+    transition: right 0.5s;
+    animation-direction: reverse;
+    a:hover {
+        text-decoration: underline;
+    }
     &--hidden {
-        left: 100vw;
+        right: -100vw;
     }
     &--show {
-        left: 0vw;
+        right: 0vw;
     }
 }

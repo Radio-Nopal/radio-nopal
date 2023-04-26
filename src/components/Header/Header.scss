@@ -1,65 +1,120 @@
 .header {
     $self: &;
-    position: sticky;
-    top: 0px;
-    &__now-playing {
-        span {
-            font-family: 'Birch Std';
+    top: -2px;
+    &__logo {
+        height: 80px;
+        transition: width 1s;
+        transition-timing-function: ease;
+    }
+    &__container {
+        height: 120px;
+        background-color: transparent;
+        box-shadow: 0px rgba(0, 0, 0, 0.2);
+    }
+    &__live-signal {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: transparent;
+        margin-right: 5px;
+        display: inline-block;
+        animation: live-animation 0.7s ease infinite alternate;
+        @keyframes live-animation {
+            0% {
+                background-color: transparent;
+            }
+            100% {
+                background-color: red;
+            }
         }
     }
-    &__search-box {
-        width: 100%;
+    .Marquee {
+        overflow: hidden;
+    }
+    .MarqueeContent {
+        div {
+            width: max-content;
+            br  {
+                content: ' '
+            }
+            br:after {
+                content: ' '
+            }
+        }
+    }
+    &__now-playing {
+        padding: 15px 0px;
+        margin: 0rem 0.75rem;
+        width: 160px;
+    }
+    &__show-name {
+        margin-left: 18px;
+    }
+    &__player-container {
+        display: flex;
+    }
+    @screen md {
+        .MarqueeContent {
+            display: none;
+        }
+
+        #{ $self }__logo {
+            height: 140px;
+        }
+
+        #{ $self }__player-container {
+            display: block;
+        }
+        #{ $self }__now-playing {
+            margin: 0rem;
+        }
     }
 
-    #{ $self }__nopal {
-        display: none;
-    }
+    &.is-pinned {
+        #{ $self }__player-container {
+            display: flex;
+        }
+        #{ $self }__now-playing {
+            width: 160px;
+            padding: 0px;
+            margin: 0rem 0.75rem;
+        }
+        &__show-name {
+            margin-left: 18px;
+        }
+        #{ $self }__container {
+            height: 85px;
+        }
 
-    &__sticky {
+        .MarqueeContent {
+            display: inherit;
+        }
+
+        #{ $self }__logo {
+            height: 45px;
+        }
+   
+        #{ $self }__container {
+            background-color: white;
+            border-radius: 0px 0px 10px 10px;
+            box-shadow: 20px -15px 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
         #{ $self }__col {
             display: flex;
-            justify-content: space-between;
+        }
+
+        .player {
+            max-width: 50px;
+            max-height: 50px;
+            top: -5px;
         }
         @screen md {
-            position: absolute;
-   
-            #{ $self }__col {
-                display: block;
-            }
-
-        }
-    }   
-    &--collapsed {
-        min-height: 256px;
-        @screen md { 
             min-height: 0px;
-        }
-   
-        #{ $self }__sticky {
-            animation: 
-            bg-animation 3s ease infinite alternate, 
-            collapse-animation 1s normal forwards;
-            
-            #{ $self }__col {
-                display: flex;
-                justify-content: space-between;
-            }
-            @screen md {
-                #{ $self }__nopal {
-                    display: inline;
-                }
+            #{ $self }__nopal {
+                display: inline;
             }
         }
-    }
-    @keyframes collapse-animation {
-        0% {
-          background-color: coral;
-        }
-        50% {
-            background-color: rgba(128,128,128,1);
-        }
-        100% {
-          background-color: coral;
-        }
+
     }
 }
