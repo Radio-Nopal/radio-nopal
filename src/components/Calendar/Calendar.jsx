@@ -32,31 +32,34 @@ function Calendar({ view }) {
       <span className="text-xl" style={{ fontFamily: 'Circular Std Black' }}>
         Esta semana en Radio Nopal
       </span>
-      <FullCalendar
-        locale={esLocale}
-        plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
-        weekends={false}
-        height="auto"
-        ref={calendarRef}
-        initialView={view}
-        googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY}
-        eventTimeFormat={{
-          hour: '2-digit',
-          minute: '2-digit',
-          meridiem: false,
-        }}
-        eventClick={(arg) => {
-          arg.jsEvent.preventDefault();
-          if (arg.event._def.extendedProps.location) {
-            navigate(`/${arg.event._def.extendedProps.location}`);
-          }
-        }}
-        events={{
-          googleCalendarId: process.env.REACT_APP_CALENDAR_ID,
-          className: 'gcal-event',
-        }}
-      />
+      <div className="calendar">
+        <FullCalendar
+          locale={esLocale}
+          plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
+          weekends={false}
+          height="auto"
+          ref={calendarRef}
+          initialView={view}
+          googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY}
+          eventTimeFormat={{
+            hour: '2-digit',
+            minute: '2-digit',
+            meridiem: false,
+          }}
+          eventClick={(arg) => {
+            arg.jsEvent.preventDefault();
+            if (arg.event._def.extendedProps.location) {
+              navigate(`/${arg.event._def.extendedProps.location}`);
+            }
+          }}
+          events={{
+            googleCalendarId: process.env.REACT_APP_CALENDAR_ID,
+            className: 'gcal-event',
+          }}
+        />
+      </div>
     </>
+
   );
 }
 
