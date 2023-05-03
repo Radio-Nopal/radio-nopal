@@ -32,7 +32,7 @@ function Home() {
       isLoading={isLoading}
     >
       <span
-        className="direccion absolute text-xs"
+        className="direccion absolute text-xs hidden md:block"
         style={{
           bottom: '9rem',
           right: '1rem',
