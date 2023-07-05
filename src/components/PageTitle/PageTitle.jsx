@@ -26,7 +26,7 @@ function PageTitle({
             }`}
           >
             <h1 className="text-5xl pb-4">{titulo && <span>{titulo}</span>}</h1>
-            <h2>{subtitulo && <span>{subtitulo}</span>}</h2>
+            {subtitulo && <h2>{subtitulo && <span>{subtitulo}</span>}</h2> }
             {descripcion && <span>{descripcion}</span>}
           </div>
         </div>

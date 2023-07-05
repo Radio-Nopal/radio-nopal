@@ -4,12 +4,11 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import PageTitle from '../PageTitle/PageTitle';
 import Loader from '../Loader';
-import SocialNetworksLinks from '../Header/SocialNetworksLinks';
 import TextoPortable from '../TextoPortable';
 import './Page.scss';
 
 function Page({
-  children, classModifier, datosDePagina, isLoading,
+  children, datosDePagina, isLoading,
 }) {
   const {
     titulo,
@@ -23,7 +22,7 @@ function Page({
   const style = { '--header-text-color': colorFondo?.hex || 'black' };
 
   return (
-    <div className={`page ${classModifier ? `page--${classModifier}` : ''}`} style={style}>
+    <div className="page" style={style}>
       <Header />
       <PageTitle
         titulo={titulo}
@@ -32,7 +31,7 @@ function Page({
         colorFondo={colorFondo?.hex}
         imagenDeEncabezado={obtenerUrlDePrimeraImagen(imagenesCabecera)}
       />
-      <SocialNetworksLinks />
+
       <div className="max-w-4xl m-auto p-8 text-justify">
         {!isLoading ? (
           <div className="mb-8">

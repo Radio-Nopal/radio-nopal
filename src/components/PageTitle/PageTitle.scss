@@ -1,10 +1,11 @@
 .page-title {
-  min-height: 370px;
+  min-height: 162px;
   background-size: cover;
 
   h1 { 
       font-family: 'Circular Std Black';
       line-height: 48px;
+      color: #0029FF;
   }
 
   h2 {
@@ -22,7 +23,6 @@
   }
 
   &__image-container {
-    height: 70vh;
     width: 75%;
     margin: auto;
     background-size: cover;

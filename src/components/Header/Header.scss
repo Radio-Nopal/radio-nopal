@@ -28,39 +28,14 @@
             }
         }
     }
-    .Marquee {
-        overflow: hidden;
-    }
-    .MarqueeContent {
-        div {
-            width: max-content;
-            br  {
-                content: ' '
-            }
-            br:after {
-                content: ' '
-            }
-        }
-    }
     &__now-playing {
         padding: 15px 0px;
         margin: 0rem 0.75rem;
         width: 160px;
     }
-    &__player-container {
-        display: flex;
-    }
     @screen md {
-        .MarqueeContent {
-            display: none;
-        }
-
         #{ $self }__logo {
             height: 140px;
-        }
-
-        #{ $self }__player-container {
-            display: block;
         }
         #{ $self }__now-playing {
             margin: 0rem;
@@ -68,9 +43,6 @@
     }
 
     &.is-pinned {
-        #{ $self }__player-container {
-            display: flex;
-        }
         #{ $self }__now-playing {
             width: 160px;
             padding: 0px;
@@ -78,10 +50,6 @@
         }
         #{ $self }__container {
             height: 85px;
-        }
-
-        .MarqueeContent {
-            display: inherit;
         }
 
         #{ $self }__logo {

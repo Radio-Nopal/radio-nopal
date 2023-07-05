@@ -1,15 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import HamburgerMenu from 'react-hamburger-menu';
-import Marquee from 'react-smooth-marquee';
-import Player from '../Player/Player';
 import Menu from '../Menu/Menu';
 import LastTweet from '../LastTweet/LastTweet';
-import NowPlaying from '../NowPlaying/NowPlaying';
 import VolumeSlider from '../VolumeSlider/VolumeSlider';
 import SearchBar from '../SearchBar/SearchBar';
-import { store } from '../../store';
-import radionopalLogo from '../../assets/images/logo.svg';
+import PlayerContainer from './PlayerContainer';
 import './Header.scss';
 
 const initialState = {
@@ -19,9 +14,8 @@ const initialState = {
 };
 
 function Header() {
-  const { state: storeState } = useContext(store);
-  const { playing, isOnline, nowPlaying } = storeState;
   const [state, setState] = useState(initialState);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       // ([e]) => e.target.toggleAttribute('stuck', e.intersectionRatio < 1),
@@ -36,29 +30,10 @@ function Header() {
   };
 
   return (
-    <header className="header -top-1 sticky z-10">
+    <header className="header -top-1 is-pinned sticky z-10">
       <div className="header__container md:absolute p-3 w-full">
         <div className="grid grid-cols-8 gap-4 h-5/6">
-          <div className="header__col gap-2 md:gap-8 flex md:block col-span-6 md:col-span-3 justify-between items-start h-0">
-            <Link to="/" className="contents">
-              <img className="header__logo mb-6" src={radionopalLogo} alt="Radio Nopal logo" />
-            </Link>
-            <div className="header__player-container">
-              <div className="inline-flex">
-                <Player />
-              </div>
-              <div className="header__now-playing leading-4">
-                {playing && nowPlaying && <span className="header__live-signal ml-1" />}
-                {isOnline ? nowPlaying && playing && 'Estás escuchando: ' : 'Offline'}
-                <br />
-                {playing && nowPlaying && (
-                <span className="header__show-name">
-                  <NowPlaying />
-                </span>
-                )}
-              </div>
-            </div>
-          </div>
+          <PlayerContainer />
           <div className="col-span-2 md:col-span-5 flex space-between ml-auto h-0">
             <div className="flex items-start mr-4">
               <VolumeSlider />
@@ -80,9 +55,6 @@ function Header() {
             </div>
           </div>
         </div>
-        <Marquee className="header__marquee leading-7">
-          <LastTweet />
-        </Marquee>
       </div>
       <Menu showMenu={state.showMenu} ocultarMenu={ocultarMenu} />
     </header>

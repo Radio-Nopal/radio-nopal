@@ -28,14 +28,21 @@ function ShowsList({ searchTerm, filter }) {
       <div className="grid grid-cols-2 md:grid-cols-4 pt-8 gap-4">
         {datos.map((programa) => {
           const {
-            slug, nombre, dias, hora, periodicidad, locutorxs, imagenes,
+            slug, titulo, dias, hora, periodicidad, locutorxs, imagenes,
           } = programa;
           const key = slug.current;
 
           return (
             <div key={key} className="show">
-              <Link to={`/${key}`} title={nombre}>
-                <h1 className="show__title text-base truncate">{nombre}</h1>
+              <Link to={`/${key}`} title={titulo}>
+                <div
+                  className="show__image bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${obtenerUrlDePrimeraImagen(imagenes)})`,
+                    backgroundColor: 'black',
+                  }}
+                />
+                <h1 className="show__title text-base truncate">{titulo}</h1>
                 {locutorxs ? (
                   <span className="show__host">
                     {`Por: ${locutorxs[0].nombre}`}
@@ -48,13 +55,6 @@ function ShowsList({ searchTerm, filter }) {
                 ) : (
                   <br />
                 )}
-                <div
-                  className="show__image bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${obtenerUrlDePrimeraImagen(imagenes)})`,
-                    backgroundColor: 'black',
-                  }}
-                />
               </Link>
             </div>
           );

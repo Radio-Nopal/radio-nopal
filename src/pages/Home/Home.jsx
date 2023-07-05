@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { client } from '../../util/sanityClient';
 import Calendar from '../../components/Calendar/Calendar';
 import Page from '../../components/Page/Page';
-import ShowsList from '../../components/Shows/ShowsList';
+import SocialNetworksLinks from './SocialNetworksLinks';
 import { useViewport } from '../../util/viewPort';
-import './Home.scss';
+import radionopalLogo from '../../assets/images/logo.svg';
 
 function Home() {
   const [datosDePagina, setDatosDePagina] = useState({});
@@ -27,25 +28,14 @@ function Home() {
 
   return (
     <Page
-      classModifier="home"
       datosDePagina={datosDePagina}
       isLoading={isLoading}
     >
-      <span
-        className="direccion absolute text-xs hidden md:block"
-        style={{
-          bottom: '9rem',
-          right: '1rem',
-          transformOrigin: 'right bottom',
-          transform: 'rotate(-90deg) translate(100%, 0)',
-        }}
-      >
-        Calle José Rosas Moreno 123a, colonia San Rafael, CDMX, C.P. 06470
-      </span>
-      <br />
-      <br />
+      <Link to="/" className="contents">
+        <img className="header__logo mb-6" src={radionopalLogo} alt="Radio Nopal logo" />
+      </Link>
+      <SocialNetworksLinks />
       <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
-      <ShowsList filter={(programa) => !programa.archivado} />
     </Page>
   );
 }
