@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import HamburgerMenu from 'react-hamburger-menu';
 import Menu from '../Menu/Menu';
-import LastTweet from '../LastTweet/LastTweet';
 import VolumeSlider from '../VolumeSlider/VolumeSlider';
 import SearchBar from '../SearchBar/SearchBar';
 import PlayerContainer from './PlayerContainer';

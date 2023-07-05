@@ -5,7 +5,6 @@ const initialState = {
   volume: 0.9,
   nowPlaying: '',
   isOnline: false,
-  lastTweet: '',
 };
 
 const store = createContext(initialState);
@@ -22,8 +21,6 @@ function StateProvider({ children }) {
         return { ...reducer, nowPlaying: action.payload };
       case 'isOnline':
         return { ...reducer, isOnline: action.payload };
-      case 'lastTweet':
-        return { ...reducer, lastTweet: action.payload };
       default:
         throw new Error();
     }
