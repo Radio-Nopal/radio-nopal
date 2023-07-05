@@ -1,14 +1,9 @@
 .header {
     $self: &;
     top: -2px;
-    &__logo {
-        height: 80px;
-        transition: width 1s;
-        transition-timing-function: ease;
-    }
     &__container {
-        height: 120px;
-        background-color: transparent;
+        height: 85px;
+        background-color: coral;
         box-shadow: 0px rgba(0, 0, 0, 0.2);
     }
     &__live-signal {
@@ -34,49 +29,14 @@
         width: 160px;
     }
     @screen md {
-        #{ $self }__logo {
-            height: 140px;
-        }
         #{ $self }__now-playing {
             margin: 0rem;
         }
     }
 
     &.is-pinned {
-        #{ $self }__now-playing {
-            width: 160px;
-            padding: 0px;
-            margin: 0rem 0.75rem;
-        }
         #{ $self }__container {
-            height: 85px;
-        }
-
-        #{ $self }__logo {
-            height: 45px;
-        }
-   
-        #{ $self }__container {
-            background-color: white;
-            border-radius: 0px 0px 10px 10px;
             box-shadow: 20px -15px 15px 25px rgba(0, 0, 0, 0.2);
         }
-
-        #{ $self }__col {
-            display: flex;
-        }
-
-        .player {
-            max-width: 50px;
-            max-height: 50px;
-            top: -5px;
-        }
-        @screen md {
-            min-height: 0px;
-            #{ $self }__nopal {
-                display: inline;
-            }
-        }
-
     }
 }

@@ -17,7 +17,7 @@ function PageTitle({
     >
       <div
         className="text-center max-w-lg"
-        style={{ width: '100%', maxWidth: '100%', alignSelf: 'flex-end' }}
+        style={{ width: '100%', maxWidth: '100%', alignSelf: 'center' }}
       >
         <div className="page-title__image-container">
           <div

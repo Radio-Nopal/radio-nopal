@@ -30,7 +30,7 @@ function Header() {
 
   return (
     <header className="header -top-1 is-pinned sticky z-10">
-      <div className="header__container md:absolute p-3 w-full">
+      <div className="header__container p-3 w-full">
         <div className="grid grid-cols-8 gap-4 h-5/6">
           <PlayerContainer />
           <div className="col-span-2 md:col-span-5 flex space-between ml-auto h-0">
