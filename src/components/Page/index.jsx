@@ -1,9 +1,9 @@
 import React from 'react';
-import { obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
 import Header from '../Header';
 import Footer from '../Footer';
 import PageTitle from '../PageTitle/PageTitle';
 import PageContent from './PageContent';
+import { obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
 import './Page.scss';
 
 function Page({
