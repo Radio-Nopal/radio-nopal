@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { client } from '../../util/sanityClient';
+import { client, obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
 import PageContent from '../../components/Page/PageContent';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Calendar from '../../components/Calendar/Calendar';
-import SocialNetworksLinks from './SocialNetworksLinks';
+import SocialNetworksLinks from '../../components/SocialNetworksLinks';
 import { useViewport } from '../../util/viewPort';
 import radionopalLogo from '../../assets/images/logo.svg';
+import './Home.scss';
 
 function Home() {
   const [datosDePagina, setDatosDePagina] = useState({});
@@ -28,18 +28,25 @@ function Home() {
       .catch((err) => console.error(err));
   }, []);
   const {
-    /*
-    colorFondo,
     imagenesCabecera,
-    */
     contenido,
   } = datosDePagina;
+
+  const imagenDeEncabezado = obtenerUrlDePrimeraImagen(imagenesCabecera);
   return (
     <>
       <Header />
-      <Link to="/" className="contents">
-        <img className="header__logo mb-6" src={radionopalLogo} alt="Radio Nopal logo" />
-      </Link>
+      <div
+        className="home__header p-4"
+        style={{
+          backgroundImage: `url(${imagenDeEncabezado || 'none'})`,
+        }}
+      >
+        <div className="home__logo">
+          <img src={radionopalLogo} alt="Radio Nopal logo" />
+        </div>
+
+      </div>
       <SocialNetworksLinks />
       <div className="max-w-4xl m-auto p-8 text-justify">
         <PageContent
