@@ -2,8 +2,9 @@
     $self: &;
     top: -2px;
     &__container {
+        color: white;
         height: 85px;
-        background-color: coral;
+        background-color: black;
         box-shadow: 0px rgba(0, 0, 0, 0.2);
     }
     &__live-signal {

@@ -15,7 +15,7 @@ function PlayerContainer() {
         </div>
         <div className="header__now-playing leading-4">
           {playing && nowPlaying && <span className="header__live-signal ml-1" />}
-          {isOnline ? nowPlaying && playing && 'Estás escuchando: ' : 'Offline'}
+          {isOnline && nowPlaying && playing && 'Estás escuchando:'}
           <br />
           <span className="header__show-name">
             <NowPlaying />
