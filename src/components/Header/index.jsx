@@ -50,6 +50,7 @@ function Header() {
                 height={15}
                 strokeWidth={3}
                 animationDuration={0.5}
+                color="gray"
               />
             </div>
           </div>

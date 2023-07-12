@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GenericPage from './pages/GenericPage';
 import ShowInfo from './pages/ShowInfo';
-import Home from './pages/Home/Home';
+import Home from './pages/Home';
 import SearchResults from './pages/SearchResults';
 import Archivo from './pages/Archivo';
 import Programacion from './pages/Programacion';
