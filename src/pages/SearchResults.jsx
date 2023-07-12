@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Page from '../components/Page/Page';
+import Page from '../components/Page';
 import PagesList from '../components/PagesList/PagesList';
 import ShowsList from '../components/Shows/ShowsList';
 

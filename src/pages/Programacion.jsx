@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { client } from '../util/sanityClient';
 import Calendar from '../components/Calendar/Calendar';
-import Page from '../components/Page/Page';
+import Page from '../components/Page';
 import ShowsList from '../components/Shows/ShowsList';
 import { useViewport } from '../util/viewPort';
 

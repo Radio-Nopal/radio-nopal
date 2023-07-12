@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { client } from '../util/sanityClient';
-import Page from '../components/Page/Page';
+import Page from '../components/Page';
 import MixcloudArchive from '../components/MixcloudArchive/MixcloudArchive';
 import ContactLinks from '../components/HostsInfo/ContactLinks';
 import HostsInfo from '../components/HostsInfo/HostsInfo';

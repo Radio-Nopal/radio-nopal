@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { client } from '../../util/sanityClient';
+import PageContent from '../../components/Page/PageContent';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Calendar from '../../components/Calendar/Calendar';
-import Page from '../../components/Page/Page';
 import SocialNetworksLinks from './SocialNetworksLinks';
 import { useViewport } from '../../util/viewPort';
 import radionopalLogo from '../../assets/images/logo.svg';
@@ -25,18 +27,30 @@ function Home() {
       })
       .catch((err) => console.error(err));
   }, []);
-
+  const {
+    /*
+    colorFondo,
+    imagenesCabecera,
+    */
+    contenido,
+  } = datosDePagina;
   return (
-    <Page
-      datosDePagina={datosDePagina}
-      isLoading={isLoading}
-    >
+    <>
+      <Header />
       <Link to="/" className="contents">
         <img className="header__logo mb-6" src={radionopalLogo} alt="Radio Nopal logo" />
       </Link>
       <SocialNetworksLinks />
-      <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
-    </Page>
+      <div className="max-w-4xl m-auto p-8 text-justify">
+        <PageContent
+          contenido={contenido}
+          isLoading={isLoading}
+        />
+
+        <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
+      </div>
+      <Footer />
+    </>
   );
 }
 

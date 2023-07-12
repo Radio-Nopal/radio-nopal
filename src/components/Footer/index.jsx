@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaGlobe } from 'react-icons/fa';
-import Mailchimp from '../Mailchimp';
 import nopalLogo from '../../assets/images/nopal.svg';
 import './Footer.scss';
 
@@ -26,10 +25,7 @@ function Footer() {
           <a href="mailto:contato@radionopal.com">contato@radionopal.com</a>
         </div>
         <div>
-          Suscríbete a nuestro Newletter:
-          {' '}
-          <br />
-          <Mailchimp />
+          <a href="https://radionopal.us18.list-manage.com/subscribe?u=57b34f7f4e73dc46a559eff4e&id=cfdfd29eb2" target="_blank" rel="noreferrer">Suscríbete a nuestro News Letter</a>
         </div>
       </footer>
     </div>

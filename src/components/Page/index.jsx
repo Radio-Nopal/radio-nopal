@@ -1,10 +1,9 @@
 import React from 'react';
 import { obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import Header from '../Header';
+import Footer from '../Footer';
 import PageTitle from '../PageTitle/PageTitle';
-import Loader from '../Loader';
-import TextoPortable from '../TextoPortable';
+import PageContent from './PageContent';
 import './Page.scss';
 
 function Page({
@@ -31,15 +30,12 @@ function Page({
         colorFondo={colorFondo?.hex}
         imagenDeEncabezado={obtenerUrlDePrimeraImagen(imagenesCabecera)}
       />
-
       <div className="max-w-4xl m-auto p-8 text-justify">
-        {!isLoading ? (
-          <div className="mb-8">
-            <TextoPortable value={contenido} />
-          </div>
-        ) : (
-          <Loader />
-        )}
+        <PageContent
+          contenido={contenido}
+          isLoading={isLoading}
+        />
+
         {children}
       </div>
       <Footer />

@@ -18,9 +18,12 @@ function NowPlaying() {
     const socket = io(process.env.REACT_APP_MENSAJITO_SOCKET_URL, {
       transports: ['websocket', 'polling', 'flashsocket'],
     });
+
     socket.on('estacion', (msg) => {
-      dispatch({ type: 'isOnline', payload: msg.includes('nopalradio') });
+      const currentlyOnline = msg.includes('nopalradio');
+      dispatch({ type: 'isOnline', payload: currentlyOnline });
     });
+
     fetch(calendarUrl)
       .then((response) => response.json())
       .then((data) => {
@@ -29,7 +32,12 @@ function NowPlaying() {
       .catch((err) => {
         console.error('Oh no, error occured: ', err);
       });
-  }, []);
+    return () => {
+      socket.on('disconnect', () => {
+      });
+      socket.disconnect();
+    };
+  }, [isOnline]);
 
   return isOnline && nowPlaying;
 }

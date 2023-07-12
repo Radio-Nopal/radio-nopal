@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { client } from '../util/sanityClient';
-import Page from '../components/Page/Page';
+import Page from '../components/Page';
 
 function GenericPage() {
   const { slug } = useParams();

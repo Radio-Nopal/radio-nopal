@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { client } from '../util/sanityClient';
-import Page from '../components/Page/Page';
+import Page from '../components/Page';
 import ShowsList from '../components/Shows/ShowsList';
 
 function Archivo() {
