@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter, Route, Routes } from 'react-router-dom';
-import Programacion from './pages/Programacion';
-import Home from './pages/Home';
+import ReactGA from 'react-ga';
+import MainRouter from './MainRouter';
+import AudioElement from './components/AudioElement';
+import { StateProvider } from './store';
+import { ViewportProvider } from './util/viewPort';
 import reportWebVitals from './reportWebVitals';
 import './index.scss';
 
@@ -16,38 +18,31 @@ console.log(
   9px -9px 0 #FF6F61`,
 );
 console.log(
-  '%c /* \n‍ https://github.com/pesinasiller/radionopal\n */',
+  '%c /* \n‍ https://github.com/Radio-Nopal/radionopal\n */',
   'font-size: 15px; color: blue;',
 );
 
 const element = document.getElementById('root');
 const root = ReactDOM.createRoot(element);
 
-function MainRouter() {
+function App() {
+  useEffect(() => {
+    ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/programacion" element={<Programacion />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </HashRouter>
-  );
-}
-function AudioElement() {
-  return (
-    <audio id="audio-player" type="audio/mpeg">
-      <source src={process.env.REACT_APP_STREAM_URL} />
-    </audio>
+    <React.StrictMode>
+      <StateProvider>
+        <ViewportProvider>
+          <AudioElement />
+          <MainRouter />
+        </ViewportProvider>
+      </StateProvider>
+    </React.StrictMode>
   );
 }
 
-root.render(
-  <React.StrictMode>
-    <AudioElement />
-    <MainRouter />
-  </React.StrictMode>,
-);
-
+root.render(<App />);
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

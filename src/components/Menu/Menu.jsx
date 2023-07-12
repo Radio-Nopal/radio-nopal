@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
 import './Menu.scss';
 
-function Menu({ showMenu }) {
+function Menu({ showMenu, ocultarMenu }) {
   return (
     <div
-      className={`menu z-10 fixed top-0 w-screen h-screen ${
+      className={`menu p-12 z-10 text-4xl fixed top-0 w-screen h-screen ${
         showMenu ? 'menu--show' : 'menu--hidden'
       }`}
     >
@@ -14,10 +15,18 @@ function Menu({ showMenu }) {
           <Link to="/programacion">Programación</Link>
         </li>
         <li>
-          <Link to="/">Residencia</Link>
+          <Link to="/info/residencia">Residencia</Link>
         </li>
-        <li>educativa</li>
-        <li>archivo</li>
+        <li>
+          <Link to="/info/educativa">Educativa</Link>
+        </li>
+        <li>
+          <Link to="/archivo">Archivo</Link>
+        </li>
+        <br />
+        <li>
+          <SearchBar ocultarMenu={ocultarMenu} />
+        </li>
       </ul>
     </div>
   );

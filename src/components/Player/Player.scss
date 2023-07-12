@@ -29,13 +29,15 @@
         border-style: solid;
         outline: 0;
         height: 24px;
+        left: 2px;
         border-width: 12px 0 12px 20px;
     }
-
-    &:hover {
-        #{ $self }__border {
-            border: 5px dashed black;
-            animation: hover-animation 1s 0.08s infinite;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            #{ $self }__border {
+                border: 5px dashed black;
+                animation: hover-animation 1s 0.08s infinite;
+            }
         }
     }
     &--playing {
@@ -44,7 +46,21 @@
             border-style: double;
             border-width: 0 0 0 18px;
             outline: 0;
-        
+            left: 0px;
+        }
+    }
+
+    &--isOffline {
+        #{ $self }__border {
+            border: 5px solid gray;
+        }
+        svg {
+            border-color: transparent transparent transparent gray;
+        }
+        &:hover {
+            #{ $self }__border {
+                border: 5px solid gray;
+            }
         }
     }
     

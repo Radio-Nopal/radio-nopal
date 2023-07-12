@@ -1,65 +1,42 @@
 .header {
     $self: &;
-    position: sticky;
-    top: 0px;
+    top: -2px;
+    &__container {
+        height: 85px;
+        background-color: coral;
+        box-shadow: 0px rgba(0, 0, 0, 0.2);
+    }
+    &__live-signal {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: transparent;
+        margin-right: 5px;
+        display: inline-block;
+        animation: live-animation 0.7s ease infinite alternate;
+        @keyframes live-animation {
+            0% {
+                background-color: transparent;
+            }
+            100% {
+                background-color: red;
+            }
+        }
+    }
     &__now-playing {
-        span {
-            font-family: 'Birch Std';
+        padding: 15px 0px;
+        margin: 0rem 0.75rem;
+        width: 160px;
+    }
+    @screen md {
+        #{ $self }__now-playing {
+            margin: 0rem;
         }
-    }
-    &__search-box {
-        width: 100%;
-    }
-
-    #{ $self }__nopal {
-        display: none;
     }
 
-    &__sticky {
-        #{ $self }__col {
-            display: flex;
-            justify-content: space-between;
-        }
-        @screen md {
-            position: absolute;
-   
-            #{ $self }__col {
-                display: block;
-            }
-
-        }
-    }   
-    &--collapsed {
-        min-height: 256px;
-        @screen md { 
-            min-height: 0px;
-        }
-   
-        #{ $self }__sticky {
-            animation: 
-            bg-animation 3s ease infinite alternate, 
-            collapse-animation 1s normal forwards;
-            
-            #{ $self }__col {
-                display: flex;
-                justify-content: space-between;
-            }
-            @screen md {
-                #{ $self }__nopal {
-                    display: inline;
-                }
-            }
-        }
-    }
-    @keyframes collapse-animation {
-        0% {
-          background-color: coral;
-        }
-        50% {
-            background-color: rgba(128,128,128,1);
-        }
-        100% {
-          background-color: coral;
+    &.is-pinned {
+        #{ $self }__container {
+            box-shadow: 20px -15px 15px 25px rgba(0, 0, 0, 0.2);
         }
     }
 }

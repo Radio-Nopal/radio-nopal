@@ -1,24 +1,34 @@
-import React from 'react';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import Shows from '../components/Shows/Shows';
-import PageTitle from '../components/PageTitle/PageTitle';
-import './Programacion.scss';
+import React, { useState, useEffect } from 'react';
+import { client } from '../util/sanityClient';
+import Calendar from '../components/Calendar/Calendar';
+import Page from '../components/Page';
+import ShowsList from '../components/Shows/ShowsList';
+import { useViewport } from '../util/viewPort';
 
 function Programacion() {
+  const [datosDePagina, setDatosDePagina] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const { width } = useViewport();
+  const breakpoint = 600;
+
+  useEffect(() => {
+    const query = ' *[_type == "pagina" && slug.current == "programacion"]';
+
+    client
+      .fetch(query)
+      .then((datos) => {
+        setDatosDePagina(datos[0] || []);
+        setIsLoading(false);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
-    <div className="programacion">
-      <Header />
-      <PageTitle
-        title="Programación"
-        subtitle="Agosto-Septiembre"
-        description="Quisque sodales nunc id justo eleifend ullamcorper. Maecenas malesuada feugiat neque, sit amet eleifend mauris consequat nec"
-      />
-      <div className="max-w-4xl m-auto p-8">
-        <Shows />
-      </div>
-      <Footer />
-    </div>
+    <Page datosDePagina={datosDePagina} isLoading={isLoading}>
+      <br />
+      <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
+      <ShowsList filter={(programa) => !programa.archivado} />
+    </Page>
   );
 }
 
