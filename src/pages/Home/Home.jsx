@@ -1,0 +1,57 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { client } from '../../util/sanityClient';
+import PageContent from '../../components/Page/PageContent';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Calendar from '../../components/Calendar/Calendar';
+import SocialNetworksLinks from './SocialNetworksLinks';
+import { useViewport } from '../../util/viewPort';
+import radionopalLogo from '../../assets/images/logo.svg';
+
+function Home() {
+  const [datosDePagina, setDatosDePagina] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  const { width } = useViewport();
+  const breakpoint = 600;
+
+  useEffect(() => {
+    const query = ' *[_type == "pagina" && slug.current == "pagina-de-inicio"]';
+
+    client
+      .fetch(query)
+      .then((datosPaginaDeInicio) => {
+        setDatosDePagina(datosPaginaDeInicio[0] || []);
+        setIsLoading(false);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+  const {
+    /*
+    colorFondo,
+    imagenesCabecera,
+    */
+    contenido,
+  } = datosDePagina;
+  return (
+    <>
+      <Header />
+      <Link to="/" className="contents">
+        <img className="header__logo mb-6" src={radionopalLogo} alt="Radio Nopal logo" />
+      </Link>
+      <SocialNetworksLinks />
+      <div className="max-w-4xl m-auto p-8 text-justify">
+        <PageContent
+          contenido={contenido}
+          isLoading={isLoading}
+        />
+
+        <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+export default Home;
