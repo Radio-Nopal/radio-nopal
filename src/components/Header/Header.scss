@@ -7,34 +7,11 @@
         background-color: black;
         box-shadow: 0px rgba(0, 0, 0, 0.2);
     }
-    &__live-signal {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: transparent;
-        margin-right: 5px;
-        display: inline-block;
-        animation: live-animation 0.7s ease infinite alternate;
-        @keyframes live-animation {
-            0% {
-                background-color: transparent;
-            }
-            100% {
-                background-color: red;
-            }
-        }
-    }
     &__now-playing {
-        padding: 15px 0px;
         margin: 0rem 0.75rem;
         width: 160px;
+        color: red;
     }
-    @screen md {
-        #{ $self }__now-playing {
-            margin: 0rem;
-        }
-    }
-
     &.is-pinned {
         #{ $self }__container {
             box-shadow: 20px -15px 15px 25px rgba(0, 0, 0, 0.2);
