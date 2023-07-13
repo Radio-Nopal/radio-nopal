@@ -21,7 +21,7 @@ function Page({
   const style = { '--header-text-color': colorFondo?.hex || 'black' };
 
   return (
-    <div className="page" style={style}>
+    <div className="page flex flex-col min-h-screen" style={style}>
       <Header />
       <PageTitle
         titulo={titulo}
@@ -30,12 +30,12 @@ function Page({
         colorFondo={colorFondo?.hex}
         imagenDeEncabezado={obtenerUrlDePrimeraImagen(imagenesCabecera)}
       />
-      <div className="max-w-4xl m-auto p-8 text-justify">
-        <PageContent
-          contenido={contenido}
-          isLoading={isLoading}
-        />
 
+      <PageContent
+        contenido={contenido}
+        isLoading={isLoading}
+      />
+      <div className="max-w-4xl m-auto p-8 text-justify">
         {children}
       </div>
       <Footer />

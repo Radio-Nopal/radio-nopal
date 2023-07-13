@@ -47,13 +47,21 @@ function Home() {
         </div>
 
       </div>
-      <SocialNetworksLinks />
-      <div className="max-w-4xl m-auto p-8 text-justify">
-        <PageContent
-          contenido={contenido}
-          isLoading={isLoading}
-        />
 
+      <div
+        className="relative h-0"
+        style={{
+          top: '-6vh',
+        }}
+      >
+        <SocialNetworksLinks />
+      </div>
+
+      <PageContent
+        contenido={contenido}
+        isLoading={isLoading}
+      />
+      <div className="max-w-4xl m-auto p-8 text-justify">
         <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
       </div>
       <Footer />
