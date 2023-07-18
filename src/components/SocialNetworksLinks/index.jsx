@@ -4,10 +4,11 @@ import {
 } from 'react-icons/fa';
 import './SocialNetworksLinks.scss';
 
-function SocialNetworksLinks() {
+function SocialNetworksLinks({ color }) {
   const size = '1.2em';
+  const style = { '--header-text-color': color || 'black' };
   return (
-    <div className="social-network-links">
+    <div className="social-network-links" style={style}>
       <div
         className="flex"
       >
