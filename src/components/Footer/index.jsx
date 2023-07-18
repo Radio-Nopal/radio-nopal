@@ -1,5 +1,6 @@
 import React from 'react';
 import nopalLogo from '../../assets/images/nopal.svg';
+import SocialNetworksLinks from '../SocialNetworksLinks';
 import './Footer.scss';
 
 function Footer() {
@@ -14,16 +15,16 @@ function Footer() {
 
           José Rosas Moreno 123 A, Colonia San Rafael, 06470, CDMX
           <br />
-          <a href="mailto:contato@radionopal.com">contato@radionopal.com</a>
+          <a href="mailto:contacto@radionopal.com">contacto@radionopal.com</a>
         </div>
+        <div />
         <div>
-          Para más información escríbenos a →
-
-        </div>
-        <div>
-          <a href="https://radionopal.us18.list-manage.com/subscribe?u=57b34f7f4e73dc46a559eff4e&id=cfdfd29eb2" target="_blank" rel="noreferrer">
+          <a className="underline" href="https://radionopal.us18.list-manage.com/subscribe?u=57b34f7f4e73dc46a559eff4e&id=cfdfd29eb2" target="_blank" rel="noreferrer">
             Suscríbete a nuestro News Letter
           </a>
+          <div className="flex pt-2">
+            <SocialNetworksLinks color="white" />
+          </div>
         </div>
         <div>
           <img
