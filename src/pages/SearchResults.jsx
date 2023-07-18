@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Page from '../components/Page';
 import PagesList from '../components/PagesList/PagesList';
 import ShowsList from '../components/Shows/ShowsList';
+import ListaDePersonas from '../components/ListaDePersonas';
 
 function SearchResults() {
   const { searchTerm } = useParams();
@@ -17,6 +18,9 @@ function SearchResults() {
 
       <h1 className="text-4xl pt-12">Información:</h1>
       <PagesList searchTerm={searchTerm} />
+
+      <h1 className="text-4xl pt-12">Personas:</h1>
+      <ListaDePersonas searchTerm={searchTerm} />
     </Page>
   );
 }

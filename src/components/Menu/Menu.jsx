@@ -15,6 +15,9 @@ function Menu({ showMenu, ocultarMenu }) {
           <Link to="/programacion">Programación</Link>
         </li>
         <li>
+          <Link to="/somos">Somos</Link>
+        </li>
+        <li>
           <Link to="/info/residencia">Residencia</Link>
         </li>
         <li>
