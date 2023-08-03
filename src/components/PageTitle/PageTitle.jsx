@@ -2,7 +2,7 @@ import React from 'react';
 import './PageTitle.scss';
 
 function PageTitle({
-  titulo, subtitulo, descripcion, colorFondo, imagenDeEncabezado,
+  titulo, descripcion, colorFondo, imagenDeEncabezado,
 }) {
   return (
     <div
@@ -26,7 +26,6 @@ function PageTitle({
             }`}
           >
             <h1 className="text-5xl pb-4">{titulo && <span>{titulo}</span>}</h1>
-            {subtitulo && <h2>{subtitulo && <span>{subtitulo}</span>}</h2> }
             {descripcion && <span>{descripcion}</span>}
           </div>
         </div>

@@ -7,15 +7,20 @@ function PageContent({
   contenido, isLoading,
 }) {
   const renderizarSecciones = contenido?.map(({
-    izquierda, derecha, colorFondo, _key,
+    titulo, colorFondo, colorTexto, columnas, _key,
   }) => (
-    <div className="p-12 flex flex-wrap" key={_key} style={{ background: colorFondo?.hex }}>
-      <div className="lg:w-1/2 w-full p-8">
-        <TextoPortable value={izquierda} />
-      </div>
-      <div className="lg:w-1/2 w-full p-8">
-        <TextoPortable value={derecha} />
-      </div>
+    <div className="p-12" key={_key} style={{ background: colorFondo?.hex, color: colorTexto?.hex }}>
+      <div className="text-xl">{titulo}</div>
+      <section className="flex flex-wrap lg:flex-nowrap">
+        {columnas?.map(({
+          columna, _key: columnaKey,
+        }) => (
+          <div className={`lg:w-1/${columnas.length} w-full p-8`} key={columnaKey}>
+            <TextoPortable value={columna} />
+          </div>
+
+        ))}
+      </section>
     </div>
   ));
 
