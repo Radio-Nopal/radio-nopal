@@ -26,12 +26,11 @@ function PagesList({ searchTerm }) {
       {isLoading && <Loader />}
       <div className="pt-8">
         {data.map(({
-          _id, slug, titulo, subtitulo, descripcion,
+          _id, slug, titulo, descripcion,
         }) => (
           <li key={_id}>
             <Link to={`/info/${slug.current}`}>
               <span className="text-2xl">{titulo}</span>
-              <span className="ml-2 text-gray-400">{subtitulo}</span>
               <br />
               <span className="ml-6">{descripcion}</span>
             </Link>

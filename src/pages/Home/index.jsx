@@ -27,6 +27,7 @@ function Home() {
       })
       .catch((err) => console.error(err));
   }, []);
+
   const {
     imagenesCabecera,
     contenido,
