@@ -18,7 +18,7 @@ console.log(
   9px -9px 0 #FF6F61`,
 );
 console.log(
-  '%c /* \n‍ https://github.com/Radio-Nopal/radionopal\n */',
+  '%c /* \n‍ https://github.com/Radio-Nopal/radio-nopal\n */',
   'font-size: 15px; color: blue;',
 );
 

@@ -11,7 +11,7 @@ function Page({
 }) {
   const {
     titulo,
-    descripcion,
+    descripcionDePagina,
     colorFondo,
     imagenesCabecera,
     contenido,
@@ -24,7 +24,7 @@ function Page({
       <Header />
       <PageTitle
         titulo={titulo}
-        descripcion={descripcion}
+        descripcionDePagina={descripcionDePagina}
         colorFondo={colorFondo?.hex}
         imagenDeEncabezado={obtenerUrlDePrimeraImagen(imagenesCabecera)}
       />
