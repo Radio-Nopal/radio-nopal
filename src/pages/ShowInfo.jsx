@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { client } from '../util/sanityClient';
 import Page from '../components/Page';
+import TextoPortable from '../components/TextoPortable';
 import MixcloudArchive from '../components/MixcloudArchive/MixcloudArchive';
 import ContactLinks from '../components/HostsInfo/ContactLinks';
 import HostsInfo from '../components/HostsInfo/HostsInfo';
@@ -23,14 +24,16 @@ function ShowInfo() {
   }, []);
 
   const datosNoEncontrados = !isLoading && datosDePrograma.length === 0;
-  const { locutorxs, archivoMixcloud, mediosDeContacto } = datosDePrograma;
+  const {
+    locutorxs, archivoMixcloud, mediosDeContacto, descripcionDePrograma,
+  } = datosDePrograma;
 
   return (
     datosNoEncontrados
       ? <Navigate to="/" />
       : (
         <Page datosDePagina={datosDePrograma} isLoading={isLoading}>
-
+          {descripcionDePrograma && <TextoPortable value={descripcionDePrograma} />}
           {locutorxs && (
           <HostsInfo datosDeLocutorxs={locutorxs} />
           )}
