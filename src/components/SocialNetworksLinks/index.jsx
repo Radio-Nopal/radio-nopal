@@ -8,7 +8,7 @@ function SocialNetworksLinks({ color }) {
   const size = '1.2em';
   const style = { '--header-text-color': color || 'black' };
   return (
-    <div className="social-network-links" style={style}>
+    <div className="social-network-links justify-center md:justify-end" style={style}>
       <div
         className="flex"
       >

@@ -6,7 +6,7 @@ import './Footer.scss';
 function Footer() {
   return (
     <div className="bg-black w-full">
-      <footer className="footer m-auto max-w-7xl p-8 grid grid-cols-1 md:grid-cols-4 gap-x-4 gap-y-8 text-white relative z-0">
+      <footer className="footer m-auto max-w-7xl p-8 grid grid-cols-1 md:grid-cols-3 gap-y-8 text-white relative z-0">
 
         <div>
           Radio Nopal
@@ -17,19 +17,18 @@ function Footer() {
           <br />
           <a href="mailto:contacto@radionopal.com">contacto@radionopal.com</a>
         </div>
-        <div />
-        <div>
+        <div className="text-center">
           <a className="underline" href="https://radionopal.us18.list-manage.com/subscribe?u=57b34f7f4e73dc46a559eff4e&id=cfdfd29eb2" target="_blank" rel="noreferrer">
             Suscríbete a nuestro News Letter
           </a>
-          <div className="flex pt-2">
+          <div className="md:inline-block pt-2">
             <SocialNetworksLinks color="white" />
           </div>
         </div>
-        <div>
+        <div className="text-center">
           <img
             src={nopalLogo}
-            className="footer__nopal-img invert-svg m-auto md:m-0"
+            className="footer__nopal-img invert-svg m-auto"
             alt="Radio Nopal logo"
           />
         </div>
