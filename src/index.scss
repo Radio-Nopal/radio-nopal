@@ -13,12 +13,13 @@
   }
 
   h4 {
-      @apply text-3xl;
+    @apply text-3xl;
   }
 
   h5 {
-      @apply text-2xl;
+    @apply text-2xl;
   }
+
   p {
     @apply pb-2;
   }
@@ -32,7 +33,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Circular Std Book';
   ::selection {
-    background: #A792FF;
+    background: black;
     color: white;
   }
 }
