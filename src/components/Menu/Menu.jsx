@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
+import nopalLogo from '../../assets/images/nopal.svg';
 import './Menu.scss';
 
 function Menu({ showMenu, ocultarMenu }) {
@@ -29,6 +30,16 @@ function Menu({ showMenu, ocultarMenu }) {
         <br />
         <li>
           <SearchBar ocultarMenu={ocultarMenu} />
+        </li>
+        <br />
+        <li>
+          <div className="text-center">
+            <img
+              src={nopalLogo}
+              className="footer__nopal-img"
+              alt="Radio Nopal logo"
+            />
+          </div>
         </li>
       </ul>
     </div>
