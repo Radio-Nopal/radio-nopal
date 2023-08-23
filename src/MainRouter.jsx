@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GenericPage from './pages/GenericPage';
-import ShowInfo from './pages/ShowInfo';
+import Programa from './pages/Programa';
 import Persona from './pages/Persona';
 import Home from './pages/Home';
 import SearchResults from './pages/SearchResults';
@@ -21,7 +21,7 @@ function MainRouter() {
         <Route path="/archivo" element={<Archivo />} />
         <Route path="/somos" element={<Somos />} />
         <Route path="/programacion" element={<Programacion />} />
-        <Route path="/:slug" element={<ShowInfo />} />
+        <Route path="/:slug" element={<Programa />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>

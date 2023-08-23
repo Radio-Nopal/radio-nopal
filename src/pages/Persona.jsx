@@ -29,7 +29,6 @@ function Persona() {
   const {
     mediosDeContacto, biografia, fotos, nombre,
   } = datosDePersona;
-
   return (
     datosNoEncontrados
       ? <Navigate to="/" />
@@ -38,7 +37,7 @@ function Persona() {
           {fotos && (
           <div
             className="h-96 bg-center bg-cover rounded text-center overflow-hidden mb-6"
-            style={{ backgroundImage: `url('${obtenerUrlDePrimeraImagen(fotos)}')`, backgroundColor: 'black' }}
+            style={{ backgroundImage: `url('${obtenerUrlDePrimeraImagen(fotos)}')` }}
             title={nombre}
           />
           )}
