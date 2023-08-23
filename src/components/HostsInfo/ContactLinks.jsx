@@ -43,7 +43,7 @@ const obtenerUrl = (medio, usuario) => {
 };
 
 const ContactLinks = ({ mediosDeContacto }) => mediosDeContacto
-  .map(({ _key, medio, usuario }) => (
+  ?.map(({ _key, medio, usuario }) => (
     <a key={_key} href={obtenerUrl(medio, usuario)} target="_blank" rel="noreferrer" alt={usuario} className="pr-1">
       {renderIcon(medio)}
     </a>
