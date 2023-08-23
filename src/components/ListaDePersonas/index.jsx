@@ -10,11 +10,11 @@ function ListaDePersonas({ searchTerm }) {
   const [datos, setDatos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const search = searchTerm ? `&& nombre match '${searchTerm}'` : '';
-  const [lastId, setLastId] = useState('');
+  const [lastId, setLastId] = useState(null);
 
   const observerTarget = useRef(null);
 
-  const fetchNextPage = (id) => {
+  const fetchNextPage = (id, datosAnteriores) => {
     if (id === null) {
       return;
     }
@@ -33,7 +33,7 @@ function ListaDePersonas({ searchTerm }) {
         } else {
           setLastId(null); // Reached the end
         }
-        setDatos([...datos, ...result]);
+        setDatos([...datosAnteriores, ...result]);
         setIsLoading(false);
       })
       .catch((err) => console.error(err));
@@ -43,7 +43,7 @@ function ListaDePersonas({ searchTerm }) {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          fetchNextPage(lastId);
+          fetchNextPage(lastId, datos);
         }
       },
       { threshold: 1 },
@@ -58,12 +58,11 @@ function ListaDePersonas({ searchTerm }) {
         observer.unobserve(observerTarget.current);
       }
     };
-  }, [observerTarget, lastId]);
+  }, [observerTarget, lastId, search, datos]);
 
   useEffect(() => {
-    fetchNextPage();
+    fetchNextPage('', []);
   }, [searchTerm]);
-  console.log(datos);
 
   const listaDePersonas = datos?.map(({
     biografia, fotos, nombre, programas, _id, mediosDeContacto, slug,
