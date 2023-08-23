@@ -33,13 +33,13 @@ function Menu({ showMenu, ocultarMenu }) {
         </li>
         <br />
         <li>
-          <div className="text-center">
+          <Link to="/">
             <img
               src={nopalLogo}
               className="footer__nopal-img"
               alt="Radio Nopal logo"
             />
-          </div>
+          </Link>
         </li>
       </ul>
     </div>
