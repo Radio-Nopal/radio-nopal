@@ -21,7 +21,7 @@ function ShowsList({ searchTerm, filter }) {
       })
       .catch((err) => console.error(err));
   }, [searchTerm]);
-  console.log(datos);
+
   return (
     <>
       {isLoading && <Loader />}
