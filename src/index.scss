@@ -1,4 +1,28 @@
 @tailwind base;
+@layer base {
+  h1 {
+    @apply text-6xl;
+  }
+
+  h2 {
+    @apply text-5xl;
+  }
+
+  h3 {
+    @apply text-4xl;
+  }
+
+  h4 {
+      @apply text-3xl;
+  }
+
+  h5 {
+      @apply text-2xl;
+  }
+  p {
+    @apply pb-2;
+  }
+}
 @tailwind components;
 @tailwind utilities;
 
@@ -32,54 +56,6 @@ body {
   font-style: normal;
   font-display: swap;
 }
-/*
-@font-face {
-  font-family: 'Noah Text Bold';
-  src: url('./assets/fonts/NoahText/NoahText-Bold.woff2') format('woff2'),
-      url('./assets/fonts/NoahText/NoahText-Bold.woff') format('woff'),
-      url('./assets/fonts/NoahText/NoahText-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-*/
-/*
-@keyframes background-color-animation {
-  0% {
-    background-color: #f9f8de;
-  }
-  10% {
-    background-color: #ddf3ef;
-  }
-  20% {
-    background-color: #fce5e7;
-  }
-  35% {
-    background-color: #dde6e0;
-  }
-  40% {
-    background-color: #dbffe4;
-  }
-  50% {
-    background-color: #dde6e0;
-  }
-  60% {
-    background-color: #dbdcff;
-  }
-  70% {
-    background-color: #dbffe4;
-  }
-  75% {
-    background-color: #fce5e7;
-  }
-  80% {
-    background-color: #f9f8de;
-  }
-  95% {
-    background-color: #dbdcff;
-  }
-}
-*/
 
 @keyframes background-color-animation {
   0% {

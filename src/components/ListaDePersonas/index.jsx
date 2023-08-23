@@ -81,9 +81,9 @@ function ListaDePersonas({ searchTerm }) {
       {!!programas.length
       && (
         <Link to={`/${programas[0].slug.current}`}>
-          <h2 className="lista-de-personas__description text-gray-400">
+          <div className="lista-de-personas__description text-gray-400">
             {`Programa: ${programas[0].titulo}`}
-          </h2>
+          </div>
         </Link>
       )}
 

@@ -51,7 +51,7 @@ function ShowsList({ searchTerm, filter }) {
                   <br />
                 )}
                 {dias && hora && periodicidad ? (
-                  <h2 className="show__description text-gray-400">{`${dias} | ${hora} | ${periodicidad}`}</h2>
+                  <div className="show__description text-gray-400">{`${dias} | ${hora} | ${periodicidad}`}</div>
                 ) : (
                   <br />
                 )}

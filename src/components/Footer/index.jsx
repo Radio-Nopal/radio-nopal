@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import nopalLogo from '../../assets/images/nopal.svg';
 import SocialNetworksLinks from '../SocialNetworksLinks';
 import './Footer.scss';
@@ -26,11 +27,13 @@ function Footer() {
           </div>
         </div>
         <div className="text-center">
-          <img
-            src={nopalLogo}
-            className="footer__nopal-img invert-svg m-auto"
-            alt="Radio Nopal logo"
-          />
+          <Link to="/">
+            <img
+              src={nopalLogo}
+              className="footer__nopal-img invert-svg m-auto"
+              alt="Radio Nopal logo"
+            />
+          </Link>
         </div>
       </footer>
     </div>
