@@ -12,7 +12,7 @@ function ShowDetail({ data }) {
           {data.locutorxs[0]?.nombre}
         </span>
         )}
-        <h2 className="show__description text-gray-400">{`${data.dias} | ${data.hora} | ${data.periodicidad}`}</h2>
+        <div className="show__description text-gray-400">{`${data.dias} | ${data.hora} | ${data.periodicidad}`}</div>
         <img src={data.imagen_programa[0]?.url} alt={data.descripcion_programa} />
         <div>{data.descripcion_programa}</div>
       </div>
