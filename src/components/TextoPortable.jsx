@@ -44,7 +44,7 @@ function TextoPortable({ value }) {
     <PortableText
       value={value}
       components={myPortableTextComponents}
-      onMissingComponent={(e) => { console.log(e); }}
+      onMissingComponent={(e) => { console.warn(e); }}
     />
   );
 }
