@@ -18,7 +18,7 @@ function Footer() {
           <br />
           <a href="mailto:contacto@radionopal.com">contacto@radionopal.com</a>
         </div>
-        <div className="text-center">
+        <div className="md:text-center">
           <a className="underline" href="https://radionopal.us18.list-manage.com/subscribe?u=57b34f7f4e73dc46a559eff4e&id=cfdfd29eb2" target="_blank" rel="noreferrer">
             Suscríbete a nuestro News Letter
           </a>

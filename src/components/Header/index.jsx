@@ -4,6 +4,7 @@ import Menu from '../Menu/Menu';
 import VolumeSlider from '../VolumeSlider/VolumeSlider';
 import SearchBar from '../SearchBar/SearchBar';
 import PlayerContainer from './PlayerContainer';
+import radionopalLogo from '../../assets/images/logo.svg';
 import './Header.scss';
 
 const initialState = {
@@ -18,7 +19,7 @@ function Header() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       // ([e]) => e.target.toggleAttribute('stuck', e.intersectionRatio < 1),
-      ([e]) => e.target.classList.toggle('is-pinned', e.intersectionRatio < 1),
+      ([e]) => e.target.classList.toggle('header--is-pinned', e.intersectionRatio < 1),
       { threshold: [1] },
     );
     observer.observe(document.querySelector('.header'));
@@ -29,10 +30,15 @@ function Header() {
   };
 
   return (
-    <header className="header -top-1 is-pinned sticky z-10">
+    <header className="header -top-1 sticky z-10">
       <div className="header__container p-3 w-full">
         <div className="grid grid-cols-8 gap-4 h-5/6">
-          <PlayerContainer />
+          <div className="header__col gap-2 md:gap-8 flex md:block col-span-6 md:col-span-3 justify-between items-start h-0">
+            <div className="flex items-center">
+              <img className="header__logo mr-4" src={radionopalLogo} alt="Radio Nopal logo" />
+              <PlayerContainer />
+            </div>
+          </div>
           <div className="col-span-2 md:col-span-5 flex space-between ml-auto items-center">
             <div className="flex items-start mr-4">
               <VolumeSlider />
