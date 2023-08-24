@@ -9,7 +9,7 @@ function PageContent({
   const renderizarSecciones = contenido?.map(({
     titulo, colorFondo, colorTexto, columnas, _key,
   }) => (
-    <div className="p-12" key={_key} style={{ background: colorFondo?.hex, color: colorTexto?.hex }}>
+    <div className="p-2 md:p-12" key={_key} style={{ background: colorFondo?.hex, color: colorTexto?.hex }}>
       <div className="text-xl">{titulo}</div>
       <section className="flex flex-wrap lg:flex-nowrap">
         {columnas?.map(({
