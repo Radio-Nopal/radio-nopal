@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import HamburgerMenu from 'react-hamburger-menu';
 import Menu from '../Menu/Menu';
 import VolumeSlider from '../VolumeSlider/VolumeSlider';
@@ -35,7 +36,9 @@ function Header() {
         <div className="grid grid-cols-8 gap-4 h-5/6">
           <div className="header__col gap-2 md:gap-8 flex md:block col-span-6 md:col-span-3 justify-between items-start h-0">
             <div className="flex items-center">
-              <img className="header__logo mr-4" src={radionopalLogo} alt="Radio Nopal logo" />
+              <Link to="/">
+                <img className="header__logo mr-4" src={radionopalLogo} alt="Radio Nopal logo" />
+              </Link>
               <PlayerContainer />
             </div>
           </div>
