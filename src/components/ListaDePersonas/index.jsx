@@ -63,7 +63,7 @@ function ListaDePersonas({ searchTerm }) {
   useEffect(() => {
     fetchNextPage('', []);
   }, [searchTerm]);
-
+  console.log(datos);
   const listaDePersonas = datos?.map(({
     biografia, fotos, nombre, programas, _id, mediosDeContacto, slug,
   }) => (
@@ -87,9 +87,11 @@ function ListaDePersonas({ searchTerm }) {
         </Link>
       )}
 
+      {biografia && (
       <span className="lista-de-personas__biografia">
-        <TextoPortable value={biografia} />
+        <TextoPortable value={[biografia[0]]} />
       </span>
+      )}
       <ContactLinks mediosDeContacto={mediosDeContacto} />
     </div>
   ));
