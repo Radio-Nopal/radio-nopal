@@ -63,7 +63,7 @@ function ListaDePersonas({ searchTerm }) {
   useEffect(() => {
     fetchNextPage('', []);
   }, [searchTerm]);
-  console.log(datos);
+
   const listaDePersonas = datos?.map(({
     biografia, fotos, nombre, programas, _id, mediosDeContacto, slug,
   }) => (
