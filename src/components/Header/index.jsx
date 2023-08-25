@@ -34,15 +34,15 @@ function Header() {
     <header className="header -top-1 sticky z-10">
       <div className="header__container p-3 w-full">
         <div className="grid grid-cols-8 gap-4 h-5/6">
-          <div className="header__col gap-2 md:gap-8 flex md:block col-span-6 md:col-span-3 justify-between items-start h-0">
-            <div className="flex items-center">
+          <div className="header__col gap-0 md:gap-8 flex md:block col-span-7 md:col-span-3 justify-between items-start h-0">
+            <div className="flex items-center w-full">
               <Link to="/">
                 <img className="header__logo mr-4" src={radionopalLogo} alt="Radio Nopal logo" />
               </Link>
               <PlayerContainer />
             </div>
           </div>
-          <div className="col-span-2 md:col-span-5 flex space-between ml-auto items-center">
+          <div className="col-span-1 md:col-span-5 flex space-between ml-auto items-center">
             <div className="flex items-start mr-4">
               <VolumeSlider />
             </div>
