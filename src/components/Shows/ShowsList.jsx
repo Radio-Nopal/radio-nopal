@@ -25,7 +25,7 @@ function ShowsList({ searchTerm, filter }) {
   return (
     <>
       {isLoading && <Loader />}
-      <div className="grid grid-cols-2 md:grid-cols-4 pt-8 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {datos.map((programa) => {
           const {
             slug, titulo, dias, hora, periodicidad, locutorxs, imagenes,
@@ -33,10 +33,10 @@ function ShowsList({ searchTerm, filter }) {
           const key = slug.current;
 
           return (
-            <div key={key} className="show">
+            <div key={key} className="show mt-6">
               <Link to={`/${key}`} title={titulo}>
                 <div
-                  className="show__image bg-cover bg-center"
+                  className="bg-cover bg-center md:h-32 h-52"
                   style={{
                     backgroundImage: `url(${obtenerUrlDePrimeraImagen(imagenes)})`,
                     backgroundColor: 'black',
@@ -51,7 +51,7 @@ function ShowsList({ searchTerm, filter }) {
                   <br />
                 )}
                 {dias && hora && periodicidad ? (
-                  <div className="show__description text-gray-400">{`${dias} | ${hora} | ${periodicidad}`}</div>
+                  <div className="show__description text-left text-gray-400 text-sm">{`${dias} | ${hora} | ${periodicidad}`}</div>
                 ) : (
                   <br />
                 )}

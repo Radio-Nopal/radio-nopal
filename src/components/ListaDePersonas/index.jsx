@@ -70,7 +70,7 @@ function ListaDePersonas({ searchTerm }) {
     <div key={_id} className="lista-de-personas">
       <Link to={`/somos/${slug.current}`}>
         <div
-          className="lista-de-personas__image bg-cover bg-center"
+          className="md:h-32 h-52 bg-cover bg-center"
           style={{
             backgroundImage: `url(${obtenerUrlDePrimeraImagen(fotos)})`,
             backgroundColor: 'black',
