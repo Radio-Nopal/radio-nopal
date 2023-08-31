@@ -13,7 +13,7 @@ const HostsInfo = ({ datosDeLocutorxs }) => datosDeLocutorxs.map(({
         style={{ backgroundImage: `url('${obtenerUrlDePrimeraImagen(fotos)}')`, backgroundColor: 'black' }}
         title={nombre}
       />
-      <div className="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+      <div className="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
         <div className="mb-8">
           <div className="text-black font-bold text-xl mb-2">{nombre}</div>
           <div className="text-grey-darker text-base">
