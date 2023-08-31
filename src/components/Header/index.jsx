@@ -33,7 +33,7 @@ function Header() {
   return (
     <header className="header -top-1 sticky z-10">
       <div className="header__container p-3 w-full">
-        <div className="grid grid-cols-8 gap-4 h-5/6">
+        <div className="grid grid-cols-8 gap-4 h-5/6 m-auto 2xl:max-w-7xl">
           <div className="header__col gap-0 md:gap-8 flex md:block col-span-7 md:col-span-3 justify-between items-start h-0">
             <div className="flex items-center w-full">
               <Link to="/">
