@@ -1,27 +1,32 @@
 @tailwind base;
 @layer base {
-  h1 {
-    @apply text-6xl;
-  }
+  .portable-text {
+    h1 {
+      @apply text-6xl;
+    }
 
-  h2 {
-    @apply text-5xl;
-  }
+    h2 {
+      @apply text-5xl;
+    }
 
-  h3 {
-    @apply text-4xl;
-  }
+    h3 {
+      @apply text-4xl;
+    }
 
-  h4 {
-    @apply text-3xl;
-  }
+    h4 {
+      @apply text-3xl;
+    }
 
-  h5 {
-    @apply text-2xl;
-  }
+    h5 {
+      @apply text-2xl;
+    }
 
-  p {
-    @apply pb-2;
+    p {
+      @apply pb-2;
+    }
+    strong, a {
+      font-family: 'Circular Std Black';
+    }
   }
 }
 @tailwind components;

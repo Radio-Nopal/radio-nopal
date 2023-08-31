@@ -18,7 +18,7 @@ function GenericPage() {
         setIsLoading(false);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [slug]);
 
   const datosNoEncontrados = !isLoading && datosDePagina.length === 0;
 

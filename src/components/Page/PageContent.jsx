@@ -10,7 +10,7 @@ function PageContent({
     titulo, colorFondo, colorTexto, columnas, _key,
   }) => (
     <div className="p-2 md:p-12" key={_key} style={{ background: colorFondo?.hex, color: colorTexto?.hex }}>
-      <div className="text-xl">{titulo}</div>
+      <div className="text-xl text-center">{titulo}</div>
       <section className="flex flex-wrap lg:flex-nowrap">
         {columnas?.map(({
           columna, _key: columnaKey,

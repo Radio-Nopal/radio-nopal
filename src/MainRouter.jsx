@@ -16,13 +16,13 @@ function MainRouter() {
       <ScrollToTop />
       <Routes>
         <Route path="/info/:slug" element={<GenericPage />} />
-        <Route path="somos/:slug" element={<Persona />} />
+        <Route path="/somos/:slug" element={<Persona />} />
         <Route path="/busqueda/:searchTerm" element={<SearchResults />} />
         <Route path="/archivo" element={<Archivo />} />
         <Route path="/somos" element={<Somos />} />
         <Route path="/programacion" element={<Programacion />} />
         <Route path="/:slug" element={<Programa />} />
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
