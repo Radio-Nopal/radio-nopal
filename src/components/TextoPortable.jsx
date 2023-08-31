@@ -41,11 +41,13 @@ const myPortableTextComponents = {
 
 function TextoPortable({ value }) {
   return (
-    <PortableText
-      value={value}
-      components={myPortableTextComponents}
-      onMissingComponent={(e) => { console.warn(e); }}
-    />
+    <div className="portable-text">
+      <PortableText
+        value={value}
+        components={myPortableTextComponents}
+        onMissingComponent={(e) => { console.warn(e); }}
+      />
+    </div>
   );
 }
 

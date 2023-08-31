@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import nopalLogo from '../../assets/images/nopal.svg';
 import './Menu.scss';
@@ -13,19 +13,19 @@ function Menu({ showMenu, ocultarMenu }) {
     >
       <ul>
         <li>
-          <Link to="/programacion">Programación</Link>
+          <NavLink to="/programacion">Programación</NavLink>
         </li>
         <li>
-          <Link to="/somos">Somos</Link>
+          <NavLink to="/somos">Somos</NavLink>
         </li>
         <li>
-          <Link to="/info/residencia">Residencia</Link>
+          <NavLink reloadDocument to="/info/educativa">Educativa</NavLink>
         </li>
         <li>
-          <Link to="/info/educativa">Educativa</Link>
+          <NavLink reloadDocument to="/info/residencia">Residencia</NavLink>
         </li>
         <li>
-          <Link to="/archivo">Archivo</Link>
+          <NavLink reloadDocument to="/info/apoyanos">Apóyanos</NavLink>
         </li>
         <br />
         <li>
@@ -33,13 +33,13 @@ function Menu({ showMenu, ocultarMenu }) {
         </li>
         <br />
         <li>
-          <Link to="/">
+          <NavLink to="/">
             <img
               src={nopalLogo}
               className="footer__nopal-img"
               alt="Radio Nopal logo"
             />
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </div>
