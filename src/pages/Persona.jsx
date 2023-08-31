@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams, Link } from 'react-router-dom';
 import { client, obtenerUrlDePrimeraImagen } from '../util/sanityClient';
 import Page from '../components/Page';
 import TextoPortable from '../components/TextoPortable';
@@ -27,8 +27,9 @@ function Persona() {
 
   const datosNoEncontrados = !isLoading && datosDePersona.length === 0;
   const {
-    mediosDeContacto, biografia, fotos, nombre,
+    mediosDeContacto, biografia, fotos, nombre, programas,
   } = datosDePersona;
+  console.log(datosDePersona);
   return (
     datosNoEncontrados
       ? <Navigate to="/" />
@@ -42,6 +43,15 @@ function Persona() {
           />
           )}
           {biografia && <TextoPortable value={biografia} />}
+          <br />
+          {!!programas?.length
+            && (
+              <Link to={`/${programas[0].slug.current}`}>
+                <div className="lista-de-personas__description text-gray-400">
+                  {`Programa: ${programas[0].titulo}`}
+                </div>
+              </Link>
+            )}
           {mediosDeContacto && (
           <>
             <h1 className="text-2xl pt-2 pb-2 mt-6">Contacto</h1>
