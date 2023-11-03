@@ -29,7 +29,7 @@ function Persona() {
   const {
     mediosDeContacto, biografia, fotos, nombre, programas,
   } = datosDePersona;
-  console.log(datosDePersona);
+
   return (
     datosNoEncontrados
       ? <Navigate to="/" />

@@ -26,9 +26,14 @@ function Programa() {
   const datosNoEncontrados = !isLoading && datosDePrograma.length === 0;
   const {
     locutorxs, archivoMixcloud, mediosDeContacto, descripcionDePrograma, dias,
-    hora, periodicidad, titulo, imagenes,
+    hora, periodicidad, titulo, imagenes, fechasLegacy, mixcloudIframeLinks = [],
   } = datosDePrograma;
-  const mostrarPeriodicidad = dias && hora && periodicidad;
+  const laFechaFueImportadaDeWordpress = !!fechasLegacy?.length;
+  const mostrarPeriodicidad = dias && hora && periodicidad && !laFechaFueImportadaDeWordpress;
+
+  const mixcloudProgramas = mixcloudIframeLinks.map(
+    (link) => (<iframe key={link} title={link} src={link} />),
+  );
 
   return (
     datosNoEncontrados
@@ -40,10 +45,11 @@ function Programa() {
             style={{ backgroundImage: `url('${obtenerUrlDePrimeraImagen(imagenes)}')` }}
             title={titulo}
           />
+          {laFechaFueImportadaDeWordpress && <div className="show__description text-gray-400">{fechasLegacy}</div>}
           {mostrarPeriodicidad && <div className="show__description text-gray-400">{`${dias} | ${hora} | ${periodicidad}`}</div>}
           <br />
           {descripcionDePrograma && <TextoPortable value={descripcionDePrograma} />}
-
+          <br />
           {locutorxs && (
           <HostsInfo datosDeLocutorxs={locutorxs} />
           )}
@@ -59,6 +65,15 @@ function Programa() {
               <MixcloudArchive data={archivoMixcloud} />
             </>
           )}
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            padding: '20px',
+            justifyContent: 'space-evenly',
+          }}
+          >
+            {mixcloudProgramas}
+          </div>
         </Page>
       )
 

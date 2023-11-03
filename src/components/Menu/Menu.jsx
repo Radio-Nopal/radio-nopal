@@ -19,6 +19,9 @@ function Menu({ showMenu, ocultarMenu }) {
           <NavLink to="/somos">Somos</NavLink>
         </li>
         <li>
+          <NavLink to="/archivo">Archivo</NavLink>
+        </li>
+        <li>
           <NavLink reloadDocument to="/info/educativa">Educativa</NavLink>
         </li>
         <li>
