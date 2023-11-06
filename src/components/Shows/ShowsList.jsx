@@ -43,7 +43,7 @@ function ShowsList({ searchTerm, filter }) {
                   }}
                 />
                 <h1 className="show__title text-base truncate">{titulo}</h1>
-                {locutorxs ? (
+                {locutorxs.length ? (
                   <span className="show__host">
                     {`Por: ${locutorxs[0].nombre}`}
                   </span>
