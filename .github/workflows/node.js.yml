@@ -5,9 +5,8 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 permissions:
   contents: write
 jobs:
@@ -29,4 +28,5 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          folder: build     # The folder the action should deploy.
+          branch: gh-pages
+          folder: build
