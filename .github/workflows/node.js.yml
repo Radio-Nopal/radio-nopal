@@ -8,36 +8,25 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
+permissions:
+  contents: write
 jobs:
   build:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - name: Install Dependencies
-      run: npm install
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        run: npm install
 
-    - name: Build
-      run: npm run build
-      env:
-        CI: false
+      - name: Build
+        run: npm run build
+        env:
+          CI: false
 
-
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.4
-      with:
-        branch: gh-pages  # The branch the action should deploy to.
-        folder: build     # The folder the action should deploy.
-        token: ${{ secrets.GITHUB_TOKEN }}  # GitHub automatically creates this secret to use in your workflow.
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          folder: build     # The folder the action should deploy.
