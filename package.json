@@ -2,6 +2,7 @@
   "name": "radionopal-v2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://radio-nopal.github.io/radio-nopal",
   "dependencies": {
     "@fullcalendar/core": "^6.1.1",
     "@fullcalendar/daygrid": "^6.1.1",
