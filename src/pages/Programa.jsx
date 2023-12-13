@@ -3,7 +3,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import { client, obtenerUrlDePrimeraImagen } from '../util/sanityClient';
 import Page from '../components/Page';
 import TextoPortable from '../components/TextoPortable';
-import MixcloudArchive from '../components/MixcloudArchive/MixcloudArchive';
+// import MixcloudArchive from '../components/MixcloudArchive/MixcloudArchive';
 import ContactLinks from '../components/HostsInfo/ContactLinks';
 import HostsInfo from '../components/HostsInfo/HostsInfo';
 
@@ -25,7 +25,7 @@ function Programa() {
 
   const datosNoEncontrados = !isLoading && datosDePrograma.length === 0;
   const {
-    locutorxs, archivoMixcloud, mediosDeContacto, descripcionDePrograma, dias,
+    locutorxs, /* archivoMixcloud, */ mediosDeContacto, descripcionDePrograma, dias,
     hora, periodicidad, titulo, imagenes, fechasLegacy, mixcloudIframeLinks = [],
   } = datosDePrograma;
   const laFechaFueImportadaDeWordpress = !!fechasLegacy?.length;
@@ -59,12 +59,12 @@ function Programa() {
             <ContactLinks mediosDeContacto={mediosDeContacto} />
           </>
           )}
-          {archivoMixcloud && (
+          {/* archivoMixcloud && (
             <>
               <h1 className="text-2xl pt-6 pb-4">Archivo</h1>
               <MixcloudArchive data={archivoMixcloud} />
             </>
-          )}
+          ) */}
           <div style={{
             display: 'flex',
             flexWrap: 'wrap',
