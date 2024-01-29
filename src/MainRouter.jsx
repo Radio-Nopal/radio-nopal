@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import GenericPage from './pages/GenericPage';
 import Programa from './pages/Programa';
 import Persona from './pages/Persona';
@@ -12,7 +12,7 @@ import ScrollToTop from './util/ScrollToTop';
 
 function MainRouter() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/info/:slug" element={<GenericPage />} />
@@ -24,7 +24,7 @@ function MainRouter() {
         <Route path="/:slug" element={<Programa />} />
         <Route exact path="/" element={<Home />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
