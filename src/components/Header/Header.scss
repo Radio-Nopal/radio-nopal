@@ -20,12 +20,14 @@
         overflow: hidden;
     }
     &__logo {
-        display: none;
+        display: inline;
     }
     &.header--is-pinned {
+        /*
         #{ $self }__logo {
             display: inline;
         }
+        */
         #{ $self }__container {
             background-color: blue;
             box-shadow: 20px -15px 15px 25px rgba(0, 0, 0, 0.2);
