@@ -5,6 +5,7 @@
         background-size: cover;
     }
     &__logo {
+        filter:invert(100%);
         width: 7rem;
     }
 }
