@@ -10,9 +10,11 @@ import Somos from './pages/Somos';
 import Programacion from './pages/Programacion';
 import ScrollToTop from './util/ScrollToTop';
 
+const basename = process.env.NODE_ENV === 'development' ? '/' : '/radio-nopal';
+
 function MainRouter() {
   return (
-    <BrowserRouter basename="/radio-nopal">
+    <BrowserRouter basename={basename}>
       <ScrollToTop />
       <Routes>
         <Route path="/info/:slug" element={<GenericPage />} />
