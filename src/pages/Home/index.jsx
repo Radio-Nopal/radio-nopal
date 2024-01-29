@@ -31,6 +31,7 @@ function Home() {
   const {
     imagenesCabecera,
     contenido,
+    colorFondo,
   } = datosDePagina;
 
   const imagenDeEncabezado = obtenerUrlDePrimeraImagen(imagenesCabecera);
@@ -55,7 +56,7 @@ function Home() {
           top: '-6vh',
         }}
       >
-        <SocialNetworksLinks />
+        <SocialNetworksLinks color={colorFondo?.hex} />
       </div>
 
       <PageContent
