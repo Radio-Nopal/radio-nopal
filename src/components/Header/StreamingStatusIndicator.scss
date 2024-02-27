@@ -1,0 +1,23 @@
+.blinking {
+    animation: blink-animation 1s 0.08s infinite;
+  }
+  
+  @keyframes blink-animation {
+    0% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
+
+  .fill-white {
+    fill: white;
+  }
+  
+  .fill-black {
+    fill: black;
+  }
