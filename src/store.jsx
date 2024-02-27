@@ -22,7 +22,6 @@ const { Provider } = store;
 function StateProvider({ children }) {
   const [state, dispatch] = useReducer((reducer, action) => {
     const { streamingId } = action;
-
     switch (action.type) {
       case 'playing':
       case 'nowPlaying':

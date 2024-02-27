@@ -1,12 +1,12 @@
 import { io } from 'socket.io-client';
 import streams from '../streams.constants';
 
-function getStreamingStatus({ dispatch }) {
+function getStreamingStatus(dispatch) {
   const handleSocketMessage = (msg) => {
     streams.forEach(async (stream) => {
-      const { streamName } = stream;
+      const { streamName, streamingId } = stream;
       const currentlyOnline = msg.includes(streamName);
-      await dispatch({ type: 'isOnline', payload: currentlyOnline, streamName });
+      await dispatch({ type: 'isOnline', payload: currentlyOnline, streamingId });
     });
   };
 
