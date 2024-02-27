@@ -31,7 +31,8 @@ function VolumeSlider() {
         step={0.01}
         value={volume}
         onChange={(event) => {
-          document.getElementById('audio-player').volume = volume;
+          document.getElementById('audio-player-1').volume = volume;
+          document.getElementById('audio-player-2').volume = volume;
           dispatch({ type: 'volume', payload: event.target.value });
         }}
       />

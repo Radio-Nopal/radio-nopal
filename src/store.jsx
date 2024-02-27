@@ -1,10 +1,19 @@
 import React, { createContext, useReducer } from 'react';
 
 const initialState = {
-  playing: false,
   volume: 0.9,
-  nowPlaying: '',
-  isOnline: false,
+  streams: {
+    1: {
+      playing: false,
+      nowPlaying: '',
+      isOnline: false,
+    },
+    2: {
+      playing: false,
+      nowPlaying: '',
+      isOnline: false,
+    },
+  },
 };
 
 const store = createContext(initialState);
@@ -12,15 +21,24 @@ const { Provider } = store;
 
 function StateProvider({ children }) {
   const [state, dispatch] = useReducer((reducer, action) => {
+    const { streamingId } = action;
+
     switch (action.type) {
       case 'playing':
-        return { ...reducer, playing: action.payload };
+      case 'nowPlaying':
+      case 'isOnline':
+        return {
+          ...reducer,
+          streams: {
+            ...reducer.streams,
+            [streamingId]: {
+              ...reducer.streams[streamingId],
+              [action.type]: action.payload,
+            },
+          },
+        };
       case 'volume':
         return { ...reducer, volume: action.payload };
-      case 'nowPlaying':
-        return { ...reducer, nowPlaying: action.payload };
-      case 'isOnline':
-        return { ...reducer, isOnline: action.payload };
       default:
         throw new Error();
     }

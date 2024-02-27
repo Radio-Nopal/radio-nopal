@@ -40,7 +40,7 @@ function Calendar({ view }) {
           height="auto"
           ref={calendarRef}
           initialView={view}
-          googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY}
+          googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_1}
           eventTimeFormat={{
             hour: '2-digit',
             minute: '2-digit',
@@ -53,7 +53,7 @@ function Calendar({ view }) {
             }
           }}
           events={{
-            googleCalendarId: process.env.REACT_APP_CALENDAR_ID,
+            googleCalendarId: process.env.REACT_APP_CALENDAR_ID_1,
             className: 'gcal-event',
           }}
         />
