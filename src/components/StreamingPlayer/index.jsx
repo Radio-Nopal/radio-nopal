@@ -7,7 +7,6 @@ function StreamingPlayer({ streamingId }) {
   const { state, dispatch } = useContext(store);
   const { streams } = state;
   const { playing, isOnline, nowPlaying } = streams[streamingId];
-
   const audioElement = document.getElementById(`audio-player-${streamingId}`);
   const handlePlayerClick = () => {
     if (!isOnline) return;
