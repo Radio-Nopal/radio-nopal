@@ -22,7 +22,7 @@ function Archivo() {
   return (
     <Page datosDePagina={datosDePagina} isLoading={isLoading}>
       <br />
-      <ShowsList filter={(programa) => programa.archivado} />
+      <ShowsList queryFilter="&& archivado == true" />
     </Page>
   );
 }

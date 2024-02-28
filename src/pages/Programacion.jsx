@@ -27,7 +27,7 @@ function Programacion() {
     <Page datosDePagina={datosDePagina} isLoading={isLoading}>
       <br />
       <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
-      <ShowsList filter={(programa) => !programa.archivado} />
+      <ShowsList queryFilter="&& archivado == false" />
     </Page>
   );
 }
