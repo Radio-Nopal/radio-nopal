@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/radio-nopal/static/css/main.ce3c8181.css",
-    "main.js": "/radio-nopal/static/js/main.00c60af0.js",
+    "main.js": "/radio-nopal/static/js/main.ac98b847.js",
     "static/js/726.146863c6.chunk.js": "/radio-nopal/static/js/726.146863c6.chunk.js",
     "static/js/787.9824a286.chunk.js": "/radio-nopal/static/js/787.9824a286.chunk.js",
     "static/media/CircularStd-Black.ttf": "/radio-nopal/static/media/CircularStd-Black.30d9b80966df09221162.ttf",
@@ -14,12 +14,12 @@
     "static/media/logo.svg": "/radio-nopal/static/media/logo.07b0039be91560fc507e4abd92e0bce3.svg",
     "index.html": "/radio-nopal/index.html",
     "main.ce3c8181.css.map": "/radio-nopal/static/css/main.ce3c8181.css.map",
-    "main.00c60af0.js.map": "/radio-nopal/static/js/main.00c60af0.js.map",
+    "main.ac98b847.js.map": "/radio-nopal/static/js/main.ac98b847.js.map",
     "726.146863c6.chunk.js.map": "/radio-nopal/static/js/726.146863c6.chunk.js.map",
     "787.9824a286.chunk.js.map": "/radio-nopal/static/js/787.9824a286.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ce3c8181.css",
-    "static/js/main.00c60af0.js"
+    "static/js/main.ac98b847.js"
   ]
 }
