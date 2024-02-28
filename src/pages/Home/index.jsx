@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { client, obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
 import PageContent from '../../components/Page/PageContent';
 import Header from '../../components/Header';
@@ -7,16 +7,11 @@ import Calendar from '../../components/Calendar/Calendar';
 import SocialNetworksLinks from '../../components/SocialNetworksLinks';
 import { useViewport } from '../../util/viewPort';
 import radionopalLogo from '../../assets/images/logo.svg';
-import getStreamingStatus from '../../util/getStreamingStatus';
-import getCalendarData from '../../util/getCalendarData';
-import { store } from '../../store';
 import './Home.scss';
 
 function Home() {
   const [datosDePagina, setDatosDePagina] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-  const { dispatch } = useContext(store);
 
   const { width } = useViewport();
   const breakpoint = 600;
@@ -31,8 +26,6 @@ function Home() {
         setIsLoading(false);
       })
       .catch((err) => console.error(err));
-    getCalendarData(dispatch);
-    getStreamingStatus(dispatch);
   }, []);
 
   const {

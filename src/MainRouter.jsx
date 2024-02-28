@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GenericPage from './pages/GenericPage';
 import Programa from './pages/Programa';
@@ -9,10 +9,20 @@ import Archivo from './pages/Archivo';
 import Somos from './pages/Somos';
 import Programacion from './pages/Programacion';
 import ScrollToTop from './util/ScrollToTop';
+import getStreamingStatus from './util/getStreamingStatus';
+import getCalendarData from './util/getCalendarData';
+import { store } from './store';
 
 const basename = process.env.NODE_ENV === 'development' ? '/' : '/radio-nopal';
 
 function MainRouter() {
+  const { dispatch } = useContext(store);
+
+  useEffect(() => {
+    getCalendarData(dispatch);
+    getStreamingStatus(dispatch);
+  }, []);
+
   return (
     <BrowserRouter basename={basename}>
       <ScrollToTop />
