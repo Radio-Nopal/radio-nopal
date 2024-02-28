@@ -44,14 +44,14 @@ function StreamingPlayer({ streamingId }) {
         flex-auto md:flex-1`}
       onClick={handlePlayerClick}
     >
-      <div className="streaming-player__container grid grid-cols-8 items-center">
+      <div className={`streaming-player__container grid grid-cols-8 items-center ${!isOnline && 'text-gray-500'}`}>
         <div className="streaming-player__icon">
           <svg />
         </div>
         <div className="text-start col-span-6 truncate uppercase">
           {nowPlaying}
         </div>
-        <div className={`text-2xl ${!isOnline && 'text-gray-500'}`}>
+        <div className="text-2xl">
           {streamingId}
         </div>
       </div>
