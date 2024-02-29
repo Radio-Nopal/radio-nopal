@@ -32,7 +32,7 @@ function PaginatedMixcloudArchive({ mixcloudIframeLinks, itemsPerPage }) {
       }}
       >
         {currentItems.map((link) => (
-          <iframe className="mb-4 -mx-8 w-full" key={link} title={link} src={link} />
+          <iframe className="mb-4 -mx-8 w-full sm:w-auto" key={link} title={link} src={link} />
         ))}
       </div>
       <div className="p-4 text-center mt-2">
