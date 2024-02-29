@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { client } from '../util/sanityClient';
 import Page from '../components/Page';
-import ShowsList from '../components/Shows/ShowsList';
+import ListaDeProgramas from '../components/ListaDeProgramas';
 
 function Archivo() {
   const [datosDePagina, setDatosDePagina] = useState({});
@@ -22,7 +22,7 @@ function Archivo() {
   return (
     <Page datosDePagina={datosDePagina} isLoading={isLoading}>
       <br />
-      <ShowsList queryFilter="&& archivado == true" />
+      <ListaDeProgramas queryFilter="&& archivado == true" />
     </Page>
   );
 }

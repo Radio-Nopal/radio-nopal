@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { client } from '../util/sanityClient';
 import Calendar from '../components/Calendar/Calendar';
 import Page from '../components/Page';
-import ShowsList from '../components/Shows/ShowsList';
+import ListaDeProgramas from '../components/ListaDeProgramas';
 import { useViewport } from '../util/viewPort';
 
 function Programacion() {
@@ -27,7 +27,7 @@ function Programacion() {
     <Page datosDePagina={datosDePagina} isLoading={isLoading}>
       <br />
       <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
-      <ShowsList queryFilter="&& archivado == false" />
+      <ListaDeProgramas queryFilter="&& archivado == false" />
     </Page>
   );
 }
