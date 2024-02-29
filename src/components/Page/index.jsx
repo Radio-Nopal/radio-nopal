@@ -33,7 +33,7 @@ function Page({
         contenido={contenido}
         isLoading={isLoading}
       />
-      <div className="max-w-4xl m-auto mt-0 p-8">
+      <div className="md:max-w-4xl m-auto mt-0 p-8 w-full">
         {children}
       </div>
       <Footer />
