@@ -49,18 +49,14 @@ function ShowsList({ searchTerm, queryFilter = '' }) {
                   }}
                 />
                 <h1 className="programa__title text-base truncate">{titulo}</h1>
-                {locutorxs?.length && locutorxs[0]?.nombre ? (
+                {(locutorxs?.length && locutorxs[0]?.nombre)
+                  && (
                   <div className="truncate block max-w-full">
                     {`Por: ${locutorxs?.map((locutor) => locutor.nombre).join(', ')}`}
                   </div>
-                ) : (
-                  <br />
-                )}
-                {horario.length ? (
-                  <div className="show__description text-left text-gray-400 text-sm">{horario}</div>
-                ) : (
-                  <br />
-                )}
+                  )}
+                {horario.length
+                  && <div className="show__description text-left text-gray-400 text-sm capitalize">{horario}</div>}
               </Link>
             </div>
           );
