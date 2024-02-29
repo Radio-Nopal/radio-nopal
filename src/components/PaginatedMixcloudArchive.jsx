@@ -22,8 +22,8 @@ function PaginatedMixcloudArchive({ mixcloudIframeLinks, itemsPerPage }) {
   };
 
   return (
-    <div className="border border-gray-300 p-4 rounded-t">
-      <h1 className="text-xl">Archivo de grabaciones</h1>
+    <div className="border border-gray-300 rounded-t">
+      <h1 className="text-x p-4">Archivo de grabaciones</h1>
       <div style={{
         display: 'flex',
         flexWrap: 'wrap',
@@ -32,10 +32,10 @@ function PaginatedMixcloudArchive({ mixcloudIframeLinks, itemsPerPage }) {
       }}
       >
         {currentItems.map((link) => (
-          <iframe className="mb-4" key={link} title={link} src={link} />
+          <iframe className="mb-4 -mx-8 w-full" key={link} title={link} src={link} />
         ))}
       </div>
-      <div style={{ textAlign: 'center', margin: '20px 0' }}>
+      <div className="p-4 text-center mt-2">
         <button type="button" onClick={prevPage} disabled={currentPage === 1} style={{ color: currentPage === 1 ? 'gray' : 'inherit' }}>Anterior</button>
         <span style={{ margin: '0 10px' }}>
           {currentPage}

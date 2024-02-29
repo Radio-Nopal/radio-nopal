@@ -25,7 +25,7 @@ function PageTitle({
               imagenDeEncabezado ? 'page-title__info--inverse' : ''
             }`}
           >
-            <h1 className="text-5xl pb-4">{titulo && <span>{titulo}</span>}</h1>
+            <h1 className="md:text-5xl text-3xl pb-4">{titulo && <span>{titulo}</span>}</h1>
             {descripcionDePagina && <span>{descripcionDePagina}</span>}
           </div>
         </div>
