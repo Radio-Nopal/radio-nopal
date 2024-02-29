@@ -55,7 +55,7 @@ function Programa() {
         <div className="show__description text-gray-400">{`${dias} | ${hora} | ${periodicidad}`}</div>
       )}
       <br />
-      {descripcionDePrograma && <TextoPortable value={descripcionDePrograma} />}
+      {descripcionDePrograma && <TextoPortable className="text-justify" value={descripcionDePrograma} />}
       <br />
       {locutorxs && locutorxs.length > 0 && locutorxs[0]?.nombre && (
         <HostsInfo datosDeLocutorxs={locutorxs} />
