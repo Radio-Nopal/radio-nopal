@@ -5,6 +5,10 @@ import nopalLogo from '../../assets/images/nopal.svg';
 import './Menu.scss';
 
 function Menu({ showMenu, ocultarMenu }) {
+  const handleCloseMenu = () => {
+    ocultarMenu();
+  };
+
   return (
     <div
       className={`menu p-12 z-10 text-4xl fixed top-0 w-screen h-screen ${
@@ -13,22 +17,22 @@ function Menu({ showMenu, ocultarMenu }) {
     >
       <ul>
         <li>
-          <NavLink to="/programacion">Programación</NavLink>
+          <NavLink to="/programacion" onClick={handleCloseMenu}>Programación</NavLink>
         </li>
         <li>
-          <NavLink to="/somos">Somos</NavLink>
+          <NavLink to="/somos" onClick={handleCloseMenu}>Somos</NavLink>
         </li>
         <li>
-          <NavLink to="/archivo">Archivo</NavLink>
+          <NavLink to="/archivo" onClick={handleCloseMenu}>Archivo</NavLink>
         </li>
         <li>
-          <NavLink reloadDocument to="/info/educativa">Educativa</NavLink>
+          <NavLink reloadDocument to="/info/educativa" onClick={handleCloseMenu}>Educativa</NavLink>
         </li>
         <li>
-          <NavLink reloadDocument to="/info/residencia">Residencia</NavLink>
+          <NavLink reloadDocument to="/info/residencia" onClick={handleCloseMenu}>Residencia</NavLink>
         </li>
         <li>
-          <NavLink reloadDocument to="/info/apoyanos">Apóyanos</NavLink>
+          <NavLink reloadDocument to="/info/apoyanos" onClick={handleCloseMenu}>Apóyanos</NavLink>
         </li>
         <br />
         <li>
@@ -36,7 +40,7 @@ function Menu({ showMenu, ocultarMenu }) {
         </li>
         <br />
         <li>
-          <NavLink to="/">
+          <NavLink to="/" onClick={handleCloseMenu}>
             <img
               src={nopalLogo}
               className="footer__nopal-img"
