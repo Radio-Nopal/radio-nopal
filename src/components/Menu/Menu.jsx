@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import nopalLogo from '../../assets/images/nopal.svg';
@@ -8,6 +8,20 @@ function Menu({ showMenu, ocultarMenu }) {
   const handleCloseMenu = () => {
     ocultarMenu();
   };
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === 'Escape') {
+        ocultarMenu();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, [ocultarMenu]);
 
   return (
     <div
