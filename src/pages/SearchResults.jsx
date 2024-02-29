@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Page from '../components/Page';
 import PagesList from '../components/PagesList/PagesList';
-import ShowsList from '../components/Shows/ShowsList';
+import ListaDeProgramas from '../components/ListaDeProgramas';
 import ListaDePersonas from '../components/ListaDePersonas';
 
 function SearchResults() {
@@ -14,7 +14,7 @@ function SearchResults() {
   return (
     <Page datosDePagina={datosDePagina}>
       <span className="text-4xl">Programas:</span>
-      <ShowsList searchTerm={searchTerm} />
+      <ListaDeProgramas searchTerm={searchTerm} />
 
       <h1 className="text-4xl pt-12">Información:</h1>
       <PagesList searchTerm={searchTerm} />
