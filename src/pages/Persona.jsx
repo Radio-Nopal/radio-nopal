@@ -42,7 +42,7 @@ function Persona() {
             title={nombre}
           />
           )}
-          {biografia && <TextoPortable value={biografia} />}
+          {biografia && <TextoPortable className="text-justify" value={biografia} />}
           <br />
           {!!programas?.length
             && (

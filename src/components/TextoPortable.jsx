@@ -39,9 +39,9 @@ const myPortableTextComponents = {
   },
 };
 
-function TextoPortable({ value }) {
+function TextoPortable({ value, className = '' }) {
   return (
-    <div className="portable-text text-justify">
+    <div className={`portable-text ${className}`}>
       <PortableText
         value={value}
         components={myPortableTextComponents}
