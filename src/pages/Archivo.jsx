@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { client } from '../util/sanityClient';
 import Page from '../components/Page';
-import ListaDeProgramas from '../components/ListaDeProgramas';
+import ListaDeProgramas from '../components/ListaDeProgramas/index';
 
 function Archivo() {
   const [datosDePagina, setDatosDePagina] = useState({});
