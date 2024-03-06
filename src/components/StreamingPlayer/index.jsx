@@ -9,7 +9,7 @@ function StreamingPlayer({ streamingId }) {
   const { playing, isOnline, nowPlaying } = streams[streamingId];
   const audioElement = document.getElementById(`audio-player-${streamingId}`);
   const handlePlayerClick = () => {
-    // if (!isOnline) return;
+    if (!isOnline) return;
     if (!playing) {
       ReactGA.event({
         category: 'Botón Play',

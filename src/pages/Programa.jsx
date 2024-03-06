@@ -6,6 +6,7 @@ import TextoPortable from '../components/TextoPortable';
 import ContactLinks from '../components/HostsInfo/ContactLinks';
 import HostsInfo from '../components/HostsInfo/HostsInfo';
 import PaginatedMixcloudArchive from '../components/PaginatedMixcloudArchive';
+import { obtenerHorarioConFormato } from '../util/utils';
 
 function Programa() {
   const { slug } = useParams();
@@ -36,8 +37,8 @@ function Programa() {
     fechasLegacy,
     mixcloudIframeLinks = [],
   } = datosDePrograma;
-  const laFechaFueImportadaDeWordpress = !!fechasLegacy?.length;
-  const mostrarPeriodicidad = dias && hora && periodicidad && !laFechaFueImportadaDeWordpress;
+
+  const horario = obtenerHorarioConFormato(dias, hora, periodicidad, fechasLegacy);
 
   return datosNoEncontrados ? (
     <Navigate to="/" />
@@ -48,11 +49,8 @@ function Programa() {
         style={{ backgroundImage: `url('${obtenerUrlDePrimeraImagen(imagenes)}')` }}
         title={titulo}
       />
-      {laFechaFueImportadaDeWordpress && (
-        <div className="show__description text-gray-400">{fechasLegacy}</div>
-      )}
-      {mostrarPeriodicidad && (
-        <div className="show__description text-gray-400">{`${dias} | ${hora} | ${periodicidad}`}</div>
+      {horario && (
+        <div className="show__description text-gray-400">{horario}</div>
       )}
       <br />
       {descripcionDePrograma && <TextoPortable className="text-justify" value={descripcionDePrograma} />}
