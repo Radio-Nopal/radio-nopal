@@ -13,7 +13,7 @@ import getStreamingStatus from './util/getStreamingStatus';
 import getCalendarData from './util/getCalendarData';
 import { store } from './store';
 
-const basename = process.env.NODE_ENV === 'development' ? '/' : '/radio-nopal';
+// const basename = process.env.NODE_ENV === 'development' ? '/' : '/radio-nopal';
 
 function MainRouter() {
   const { dispatch } = useContext(store);
@@ -24,7 +24,7 @@ function MainRouter() {
   }, []);
 
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter>
       <ScrollToTop />
       <Routes>
         <Route path="/info/:slug" element={<GenericPage />} />
