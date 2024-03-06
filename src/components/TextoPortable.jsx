@@ -41,7 +41,7 @@ const myPortableTextComponents = {
 
 function TextoPortable({ value, className = '' }) {
   return (
-    <div className={`portable-text break-all ${className}`}>
+    <div className={`portable-text overflow-hidden ${className}`}>
       <PortableText
         value={value}
         components={myPortableTextComponents}
