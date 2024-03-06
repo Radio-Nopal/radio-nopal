@@ -24,11 +24,11 @@ function MainRouter() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <ScrollToTop />
       <Routes>
         <Route path="/info/:slug" element={<GenericPage />} />
-        <Route path="/somos/:slug" element={<Persona />} />
+        <Route exact path="/somos/:slug" element={<Persona />} />
         <Route path="/busqueda/:searchTerm" element={<SearchResults />} />
         <Route path="/archivo" element={<Archivo />} />
         <Route path="/somos" element={<Somos />} />
