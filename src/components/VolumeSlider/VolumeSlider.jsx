@@ -6,6 +6,7 @@ import './VolumeSlider.scss';
 function VolumeSlider() {
   const { state, dispatch } = useContext(store);
   const { volume } = state;
+
   const mute = () => {
     const volumeLevel = volume > 0.1 ? 0 : 1;
     dispatch({ type: 'volume', payload: volumeLevel });

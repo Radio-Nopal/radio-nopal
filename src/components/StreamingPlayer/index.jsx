@@ -17,7 +17,9 @@ function StreamingPlayer({ streamingId }) {
       });
       try {
         audioElement.play();
+        console.log(audioElement);
       } catch (e) {
+        console.warn(e);
         return;
       }
       dispatch({ type: 'playing', payload: true, streamingId });
@@ -25,6 +27,7 @@ function StreamingPlayer({ streamingId }) {
       try {
         audioElement.pause();
       } catch (e) {
+        console.warn(e);
         return;
       }
       dispatch({ type: 'playing', payload: false, streamingId });
