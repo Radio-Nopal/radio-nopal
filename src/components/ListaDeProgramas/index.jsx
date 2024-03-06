@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { client, obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
 import Loader from '../Loader';
+import { obtenerHorarioConFormato } from '../../util/utils';
 import './ListaDeProgramas.scss';
 
 function ListaDeProgramas({ searchTerm, queryFilter = '' }) {
@@ -76,15 +77,7 @@ function ListaDeProgramas({ searchTerm, queryFilter = '' }) {
           } = programa;
           const key = slug.current;
 
-          // arregla el problema de que a veces el horario está escrito sin espacios entre los |
-          const formatedFechasLegacy = fechasLegacy
-            ?.split('|')
-            .map((part) => part.trim()) // Remove leading and trailing spaces
-            .join(' | ');
-
-          const horario = dias && hora && periodicidad
-            ? `${dias} | ${hora} | ${periodicidad}`
-            : formatedFechasLegacy;
+          const horario = obtenerHorarioConFormato(dias, hora, periodicidad, fechasLegacy);
 
           return (
             <div key={key} className="programa mt-6">
