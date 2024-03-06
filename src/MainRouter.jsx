@@ -24,7 +24,7 @@ function MainRouter() {
   }, []);
 
   return (
-    <BrowserRouter basename="/">
+    <BrowserRouter basename="https://www.radionopal.com/">
       <ScrollToTop />
       <Routes>
         <Route exact path="/info/:slug" element={<GenericPage />} />
@@ -34,7 +34,7 @@ function MainRouter() {
         <Route exact path="/somos" element={<Somos />} />
         <Route exact path="/programacion" element={<Programacion />} />
         <Route exact path="/:slug" element={<Programa />} />
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

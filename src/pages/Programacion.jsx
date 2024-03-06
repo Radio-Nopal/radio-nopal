@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { client } from '../util/sanityClient';
 import Calendar from '../components/Calendar/Calendar';
 import Page from '../components/Page';
-import ListaDeProgramas from '../components/ListaDeProgramas';
+import ListaDeProgramas from '../components/ListaDeProgramas/index';
 import { useViewport } from '../util/viewPort';
 
 function Programacion() {
