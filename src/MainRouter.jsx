@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import GenericPage from './pages/GenericPage';
 import Programa from './pages/Programa';
 import Persona from './pages/Persona';
@@ -24,7 +24,7 @@ function MainRouter() {
   }, []);
 
   return (
-    <BrowserRouter basename="https://www.radionopal.com/">
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <ScrollToTop />
       <Routes>
         <Route exact path="/info/:slug" element={<GenericPage />} />
@@ -36,7 +36,7 @@ function MainRouter() {
         <Route exact path="/:slug" element={<Programa />} />
         <Route exact path="" element={<Home />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
