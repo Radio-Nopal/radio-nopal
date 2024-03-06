@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import ReactGA from 'react-ga';
 import { store } from '../../store';
-import './SreamingPlayer.scss';
+import './StreamingPlayer.scss';
 
 function StreamingPlayer({ streamingId }) {
   const { state, dispatch } = useContext(store);
@@ -9,7 +9,7 @@ function StreamingPlayer({ streamingId }) {
   const { playing, isOnline, nowPlaying } = streams[streamingId];
   const audioElement = document.getElementById(`audio-player-${streamingId}`);
   const handlePlayerClick = () => {
-    if (!isOnline) return;
+    // if (!isOnline) return;
     if (!playing) {
       ReactGA.event({
         category: 'Botón Play',
@@ -17,7 +17,6 @@ function StreamingPlayer({ streamingId }) {
       });
       try {
         audioElement.play();
-        console.log(audioElement);
       } catch (e) {
         console.warn(e);
         return;
