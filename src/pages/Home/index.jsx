@@ -6,7 +6,7 @@ import Footer from '../../components/Footer';
 import Calendar from '../../components/Calendar/Calendar';
 import SocialNetworksLinks from '../../components/SocialNetworksLinks';
 import { useViewport } from '../../util/viewPort';
-import radionopalLogo from '../../assets/images/logo.svg';
+import nopalLogo from '../../assets/images/nopal.svg';
 import './Home.scss';
 
 function Home() {
@@ -44,19 +44,25 @@ function Home() {
           backgroundImage: `url(${imagenDeEncabezado || 'none'})`,
         }}
       >
-        <div className="home__logo">
-          <img src={radionopalLogo} alt="Radio Nopal logo" />
+        <div className="m-auto 2xl:max-w-7xl h-full">
+          <div className="home__logo">
+            <img
+              src={nopalLogo}
+              className="m-auto"
+              alt="Radio Nopal logo"
+            />
+          </div>
+
         </div>
 
-      </div>
-
-      <div
-        className="relative h-0"
-        style={{
-          top: '-6vh',
-        }}
-      >
-        <SocialNetworksLinks color={colorFondo?.hex} />
+        <div
+          className="relative h-0"
+          style={{
+            top: '-6vh',
+          }}
+        >
+          <SocialNetworksLinks color={colorFondo?.hex} />
+        </div>
       </div>
 
       <PageContent
