@@ -31,6 +31,9 @@ function Menu({ showMenu, ocultarMenu }) {
     >
       <ul>
         <li>
+          <NavLink to="/" onClick={handleCloseMenu}>Inicio</NavLink>
+        </li>
+        <li>
           <NavLink to="/programacion" onClick={handleCloseMenu}>Programación</NavLink>
         </li>
         <li>

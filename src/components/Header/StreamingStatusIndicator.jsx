@@ -13,7 +13,7 @@ function StreamingStatusIndicator() {
   const circleClass = isAnyStreamOnline ? 'blinking fill-white' : 'fill-black';
 
   return (
-    <div className={`flex justify-center items-center md:w-24 w-full select-none text-xs py-3 ${backgroundColor} ${textColor}`}>
+    <div className={`hidden md:flex justify-center items-center md:w-24 w-full select-none text-xs py-3 ${backgroundColor} ${textColor}`}>
       <svg className="w-4 h-4 mr-1" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="8" className={circleClass} />
       </svg>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Tilt } from 'react-tilt';
 import HamburgerMenu from 'react-hamburger-menu';
 import Menu from '../Menu/Menu';
 import VolumeSlider from '../VolumeSlider/VolumeSlider';
@@ -38,7 +39,9 @@ function Header() {
             <div className="header__col gap-0 md:gap-8 flex md:block col-span-7 md:col-span-3 justify-between items-start h-0">
               <div className="flex items-center w-full">
                 <Link to="/">
-                  <img className="header__logo mr-4" src={radionopalLogo} alt="Radio Nopal logo" />
+                  <Tilt>
+                    <img className="header__logo mr-4" src={radionopalLogo} alt="Radio Nopal logo" />
+                  </Tilt>
                 </Link>
               </div>
             </div>
@@ -67,10 +70,12 @@ function Header() {
         </div>
         <Menu showMenu={state.showMenu} ocultarMenu={ocultarMenu} />
       </header>
-      <div className="flex flex-wrap">
-        <StreamingStatusIndicator />
-        <StreamingPlayer streamingId={1} />
-        <StreamingPlayer streamingId={2} />
+      <div className="bg-black">
+        <div className="flex flex-wrap m-auto 2xl:max-w-7xl">
+          <StreamingStatusIndicator />
+          <StreamingPlayer streamingId={1} />
+          <StreamingPlayer streamingId={2} />
+        </div>
       </div>
     </div>
   );
