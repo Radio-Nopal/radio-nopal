@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FaInstagram, FaPatreon, FaTwitterSquare, FaMixcloud, FaCoffee,
+  FaInstagram, FaPatreon, FaTwitterSquare, FaMixcloud, FaCoffee, FaFacebook, FaTiktok,
 } from 'react-icons/fa';
 import './SocialNetworksLinks.scss';
 
@@ -27,6 +27,12 @@ function SocialNetworksLinks({ color }) {
         </a>
         <a href="https://www.buymeacoffee.com/radionopal" rel="noreferrer" target="_blank">
           <FaCoffee size={size} />
+        </a>
+        <a href="https://www.facebook.com/RadioNopal/" rel="noreferrer" target="_blank">
+          <FaFacebook size={size} />
+        </a>
+        <a href="https://www.tiktok.com/@radionopal" rel="noreferrer" target="_blank">
+          <FaTiktok size={size} />
         </a>
       </div>
     </div>

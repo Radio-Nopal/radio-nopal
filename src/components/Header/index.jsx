@@ -5,7 +5,7 @@ import HamburgerMenu from 'react-hamburger-menu';
 import Menu from '../Menu/Menu';
 import VolumeSlider from '../VolumeSlider/VolumeSlider';
 import SearchBar from '../SearchBar/SearchBar';
-import radionopalLogo from '../../assets/images/logo.svg';
+import nopalLogo from '../../assets/images/nopal.svg';
 import StreamingPlayer from '../StreamingPlayer';
 import StreamingStatusIndicator from './StreamingStatusIndicator';
 import './Header.scss';
@@ -32,15 +32,15 @@ function Header() {
   };
 
   return (
-    <div className="-top-1 sticky z-10">
+    <div className="-top-1 sticky z-10 bg-black">
       <header className="header">
-        <div className="header__container p-3 w-full">
+        <div className="header__container p-3 w-full rounded-2xl">
           <div className="grid grid-cols-8 gap-4 h-5/6 m-auto 2xl:max-w-7xl">
             <div className="header__col gap-0 md:gap-8 flex md:block col-span-7 md:col-span-3 justify-between items-start h-0">
               <div className="flex items-center w-full">
                 <Link to="/">
                   <Tilt>
-                    <img className="header__logo mr-4" src={radionopalLogo} alt="Radio Nopal logo" />
+                    <img className="header__logo mr-4" src={nopalLogo} alt="Radio Nopal logo" />
                   </Tilt>
                 </Link>
               </div>

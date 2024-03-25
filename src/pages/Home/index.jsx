@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Tilt } from 'react-tilt';
 import { client, obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
 import PageContent from '../../components/Page/PageContent';
 import Header from '../../components/Header';
@@ -6,7 +7,8 @@ import Footer from '../../components/Footer';
 import Calendar from '../../components/Calendar/Calendar';
 import SocialNetworksLinks from '../../components/SocialNetworksLinks';
 import { useViewport } from '../../util/viewPort';
-import nopalLogo from '../../assets/images/nopal.svg';
+
+import radionopalLogo from '../../assets/images/logo.svg';
 import './Home.scss';
 
 function Home() {
@@ -39,18 +41,21 @@ function Home() {
     <>
       <Header />
       <div
-        className="home__header p-4"
+        className="home__header p-4 rounded-3xl"
         style={{
           backgroundImage: `url(${imagenDeEncabezado || 'none'})`,
         }}
       >
         <div className="m-auto 2xl:max-w-7xl h-full">
+
           <div className="home__logo">
-            <img
-              src={nopalLogo}
-              className="m-auto"
-              alt="Radio Nopal logo"
-            />
+            <Tilt>
+              <img
+                src={radionopalLogo}
+                className="m-auto"
+                alt="Radio Nopal logo"
+              />
+            </Tilt>
           </div>
 
         </div>

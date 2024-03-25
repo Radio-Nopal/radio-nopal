@@ -17,7 +17,7 @@ const HostsInfo = ({ datosDeLocutorxs }) => datosDeLocutorxs.map(({
         <div className="mb-8">
           <div className="text-black font-bold text-xl mb-2">{nombre}</div>
           <div className="text-grey-darker text-base">
-            <TextoPortable className="text-justify overflow-wrap" value={biografia} />
+            <TextoPortable className="overflow-wrap" value={biografia} />
           </div>
         </div>
       </div>
