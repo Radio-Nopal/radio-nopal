@@ -53,7 +53,7 @@ function Programa() {
         <div className="show__description text-gray-400">{horario}</div>
       )}
       <br />
-      {descripcionDePrograma && <TextoPortable className="text-justify" value={descripcionDePrograma} />}
+      {descripcionDePrograma && <TextoPortable className="" value={descripcionDePrograma} />}
       <br />
       {locutorxs && locutorxs.length > 0 && locutorxs[0]?.nombre && (
         <HostsInfo datosDeLocutorxs={locutorxs} />

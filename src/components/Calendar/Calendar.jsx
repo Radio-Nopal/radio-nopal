@@ -29,10 +29,10 @@ function Calendar({ view }) {
 
   return (
     <>
-      <span className="text-xl" style={{ fontFamily: 'Circular Std Black' }}>
+      <span className="text-xl mt-14" style={{ fontFamily: 'Circular Std Black' }}>
         Esta semana en Radio Nopal
       </span>
-      <div className="calendar">
+      <div className="calendar mb-14">
         <FullCalendar
           locale={esLocale}
           plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}

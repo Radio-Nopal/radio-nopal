@@ -2,7 +2,9 @@
     td, th {
       border-style: none !important;
     }
-
+    .fc-toolbar.fc-header-toolbar {
+      margin: 0;
+    }
     .fc-toolbar-title {
       display: none;
     }

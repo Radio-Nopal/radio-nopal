@@ -6,7 +6,7 @@ import './Footer.scss';
 
 function Footer() {
   return (
-    <div className="bg-black w-full">
+    <div className="bg-black w-full rounded-t-2xl">
       <footer className="footer m-auto max-w-7xl p-8 grid grid-cols-1 md:grid-cols-3 gap-y-8 text-white relative z-0">
 
         <div>
@@ -14,7 +14,9 @@ function Footer() {
 
           <br />
 
-          José Rosas Moreno 123 A, Colonia San Rafael, 06470, CDMX
+          José Rosas Moreno 123 A
+          <br />
+          Colonia San Rafael, 06470, CDMX
           <br />
           <a href="mailto:contacto@radionopal.com">contacto@radionopal.com</a>
         </div>

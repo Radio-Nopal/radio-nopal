@@ -15,7 +15,7 @@ function PageContent({
         {columnas?.map(({
           columna, _key: columnaKey,
         }) => (
-          <div className={`lg:w-1/${columnas.length} w-full p-8 text-justify`} key={columnaKey}>
+          <div className={`lg:w-1/${columnas.length} w-full p-4`} key={columnaKey}>
             <TextoPortable value={columna} />
           </div>
 
