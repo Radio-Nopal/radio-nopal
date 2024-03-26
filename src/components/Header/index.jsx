@@ -32,7 +32,7 @@ function Header() {
   };
 
   return (
-    <div className="-top-1 sticky z-10 bg-black">
+    <div className="-top-1 sticky z-10">
       <header className="header">
         <div className="header__container p-3 w-full rounded-2xl">
           <div className="grid grid-cols-8 gap-4 h-5/6 m-auto 2xl:max-w-7xl">
