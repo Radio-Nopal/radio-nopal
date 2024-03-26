@@ -1,6 +1,7 @@
 .social-network-links {
     text-align: right;
     display: flex;
+    mix-blend-mode: exclusion;
     a {
         padding: 0 0.5rem;
     }
