@@ -70,7 +70,7 @@ function Header() {
         </div>
         <Menu showMenu={state.showMenu} ocultarMenu={ocultarMenu} />
       </header>
-      <div className="bg-black">
+      <div className="bg-black rounded-xl overflow-hidden">
         <div className="flex flex-wrap m-auto 2xl:max-w-7xl">
           <StreamingStatusIndicator />
           <StreamingPlayer streamingId={1} />

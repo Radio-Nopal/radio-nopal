@@ -9,13 +9,13 @@ function PageContent({
   const renderizarSecciones = contenido?.map(({
     titulo, colorFondo, colorTexto, columnas, _key,
   }) => (
-    <div className="p-2 md:p-12" key={_key} style={{ background: colorFondo?.hex, color: colorTexto?.hex }}>
+    <div className="p-12" key={_key} style={{ background: colorFondo?.hex, color: colorTexto?.hex }}>
       <div className="text-xl text-center">{titulo}</div>
       <section className="flex flex-wrap lg:flex-nowrap m-auto max-w-7xl">
         {columnas?.map(({
           columna, _key: columnaKey,
         }) => (
-          <div className={`lg:w-1/${columnas.length} w-full p-4`} key={columnaKey}>
+          <div className={`lg:w-1/${columnas.length} w-full py-4 md:p-4`} key={columnaKey}>
             <TextoPortable value={columna} />
           </div>
 
