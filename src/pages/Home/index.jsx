@@ -74,7 +74,7 @@ function Home() {
         contenido={contenido}
         isLoading={isLoading}
       />
-      <div className="max-w-4xl m-auto p-8 text-justify">
+      <div className="max-w-4xl m-auto p-12 py-22 text-justify">
         <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
       </div>
       <Footer />

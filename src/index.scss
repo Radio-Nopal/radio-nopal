@@ -1,6 +1,7 @@
 @tailwind base;
 @layer base {
   .portable-text {
+    font-size: 0.938rem;
     h1 {
       @apply text-6xl;
     }
