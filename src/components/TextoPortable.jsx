@@ -10,7 +10,7 @@ function SampleImageComponent({ value, isInline }) {
       src={urlDeImagen(value)?.url()}
       alt={value.alt || ' '}
       loading="lazy"
-      className="rounded-3xl"
+      className="rounded-3xl w-full"
       style={{
         margin: 'auto',
         // Display alongside text if image appears inside a block text span
