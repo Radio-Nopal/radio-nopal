@@ -27,6 +27,8 @@ function Calendar({ view }) {
     changeView(view);
   }, [view]);
 
+  const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
   return (
     <>
       <span className="text-xl mt-14" style={{ fontFamily: 'Circular Std Black' }}>
@@ -34,6 +36,7 @@ function Calendar({ view }) {
       </span>
       <div className="calendar mb-14">
         <FullCalendar
+          timeZone={browserTimeZone}
           locale={esLocale}
           plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
           weekends={false}
