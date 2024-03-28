@@ -8,7 +8,7 @@ function SampleImageComponent({ value, isInline }) {
   return (
     <img
       src={urlDeImagen(value)?.url()}
-      alt={value.alt || ' '}
+      alt={value?.alt || ' '}
       loading="lazy"
       className="rounded-3xl w-full"
       style={{
@@ -30,9 +30,9 @@ const myPortableTextComponents = {
 
   marks: {
     link: ({ children, value }) => {
-      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined;
+      const rel = !value?.href?.startsWith('/') ? 'noreferrer noopener' : undefined;
       return (
-        <a href={value.href} rel={rel}>
+        <a href={value?.href} rel={rel}>
           {children}
         </a>
       );
