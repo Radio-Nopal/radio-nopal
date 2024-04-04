@@ -1,9 +1,11 @@
 import streams from '../streams.constants';
 
+const browserTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
 function getCalendarData(dispatch) {
   const fetchStreamData = async (stream) => {
     const { streamingId, calendarId, calendarApiKey } = stream;
-    const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${calendarApiKey}&timeMin=${new Date().toISOString()}&timeMax=${new Date(Date.now() + 3600000).toISOString()}&timeZone=America/Mexico_City`;
+    const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${calendarApiKey}&timeMin=${new Date().toISOString()}&timeMax=${new Date(Date.now() + 3600000).toISOString()}&timeZone=${browserTimeZone}`;
 
     try {
       const response = await fetch(calendarUrl);
