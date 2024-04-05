@@ -13,15 +13,22 @@ import getStreamingStatus from './util/getStreamingStatus';
 import getCalendarData from './util/getCalendarData';
 import { store } from './store';
 
-// const basename = process.env.NODE_ENV === 'development' ? '/' : '/radio-nopal';
-
 function MainRouter() {
   const { dispatch } = useContext(store);
 
   useEffect(() => {
+    // Obtener los datos del calendario y del estado de transmisión inicialmente
     getCalendarData(dispatch);
     getStreamingStatus(dispatch);
-  }, []);
+
+    // Establecer la actualización del calendario cada 15 minutos
+    const intervalId = setInterval(() => {
+      getCalendarData(dispatch);
+    }, 5 * 60 * 1000); // 15 minutos en milisegundos
+
+    // Limpiar el intervalo cuando el componente se desmonte o se actualice
+    return () => clearInterval(intervalId);
+  }, [dispatch]);
 
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
