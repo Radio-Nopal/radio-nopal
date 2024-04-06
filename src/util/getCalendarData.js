@@ -8,12 +8,13 @@ function getCalendarData(dispatch) {
 
     const startTime = `${new Date().toISOString().split('.')[0]}Z`;
     const endTime = `${new Date(Date.now() + 3600000 * 3).toISOString().split('.')[0]}Z`;
-    const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${calendarApiKey}&timeMin=${startTime}&timeMax=${endTime}&timeZone=${browserTimeZone}`;
+    const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${calendarApiKey}&timeMin=${startTime}&timeMax=${endTime}&timeZone=${browserTimeZone}'`;
 
     try {
       const response = await fetch(calendarUrl);
       const data = await response.json();
-
+      console.log({ data });
+      /*
       const now = new Date();
       const currentHour = now.getHours();
       const currentEvent = data.items.find((event) => {
@@ -23,7 +24,10 @@ function getCalendarData(dispatch) {
         const eventEndHour = eventEnd.getHours();
         return eventStartHour <= currentHour && currentHour < eventEndHour;
       });
-      const { summary } = currentEvent;
+      */
+      const { items } = data;
+      const lastEvent = items[items.length - 1];
+      const { summary } = lastEvent;
 
       const nowPlaying = summary; // data.items[0]?.summary;
       dispatch({ type: 'nowPlaying', payload: nowPlaying, streamingId });
