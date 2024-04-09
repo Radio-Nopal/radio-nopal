@@ -7,7 +7,7 @@ function getCalendarData(dispatch) {
     const { streamingId, calendarId, calendarApiKey } = stream;
 
     const startTime = `${new Date().toISOString().split('.')[0]}Z`;
-    const endTime = `${new Date(Date.now() + 3600000 * 3).toISOString().split('.')[0]}Z`;
+    const endTime = `${new Date(Date.now() + (3600000 * 0.5)).toISOString().split('.')[0]}Z`;
     const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${calendarApiKey}&timeMin=${startTime}&timeMax=${endTime}&timeZone=${browserTimeZone}'`;
 
     try {
