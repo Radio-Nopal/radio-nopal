@@ -7,14 +7,14 @@ function getCalendarData(dispatch) {
     const { streamingId, calendarId, calendarApiKey } = stream;
 
     const startTime = `${new Date().toISOString().split('.')[0]}Z`;
-    const endTime = `${new Date(Date.now() + (3600000 * 0.5)).toISOString().split('.')[0]}Z`;
+    const endTime = `${new Date(Date.now() + (1000)).toISOString().split('.')[0]}Z`;
     const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${calendarApiKey}&timeMin=${startTime}&timeMax=${endTime}&timeZone=${browserTimeZone}'`;
 
     try {
       const response = await fetch(calendarUrl);
       const data = await response.json();
       console.log({ data });
-
+      /*
       const now = new Date();
       const currentHour = now.getHours();
       const currentEvent = data.items.find((event) => {
@@ -24,7 +24,7 @@ function getCalendarData(dispatch) {
         const eventEndHour = eventEnd.getHours();
         return eventStartHour <= currentHour && currentHour < eventEndHour;
       });
-      console.log({ currentEvent });
+      */
       const { items } = data;
       const lastEvent = items[items.length - 1];
       const { summary } = lastEvent;
