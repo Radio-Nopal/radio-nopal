@@ -14,7 +14,7 @@ function getCalendarData(dispatch) {
       const response = await fetch(calendarUrl);
       const data = await response.json();
       console.log({ data });
-      /*
+
       const now = new Date();
       const currentHour = now.getHours();
       const currentEvent = data.items.find((event) => {
@@ -24,7 +24,7 @@ function getCalendarData(dispatch) {
         const eventEndHour = eventEnd.getHours();
         return eventStartHour <= currentHour && currentHour < eventEndHour;
       });
-      */
+      console.log({ currentEvent });
       const { items } = data;
       const lastEvent = items[items.length - 1];
       const { summary } = lastEvent;
