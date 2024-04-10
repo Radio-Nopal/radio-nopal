@@ -8,7 +8,7 @@ function getCalendarData(dispatch) {
 
     const startTime = `${new Date().toISOString().split('.')[0]}Z`;
     const endTime = `${new Date(Date.now() + (1000)).toISOString().split('.')[0]}Z`;
-    const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${calendarApiKey}&timeMin=${startTime}&timeMax=${endTime}&timeZone=${browserTimeZone}'`;
+    const calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/${calendarId}/events?key=${calendarApiKey}&timeMin=${startTime}&timeMax=${endTime}&timeZone=${browserTimeZone}&singleEvents=true`;
 
     try {
       const response = await fetch(calendarUrl);
