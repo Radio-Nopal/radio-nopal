@@ -1,7 +1,7 @@
 const streams = [
   {
     streamingId: 1,
-    streamName: 'nopalradio',
+    streamName: 'nopalA',
     calendarId: process.env.REACT_APP_CALENDAR_ID_1,
     calendarApiKey: process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_1,
   },
