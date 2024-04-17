@@ -26,7 +26,7 @@ function getCalendarData(dispatch) {
       });
       */
       const { items } = data;
-      const lastEvent = items[items.length - 1];
+      const lastEvent = items[0];
       const { summary } = lastEvent;
 
       const nowPlaying = summary; // data.items[0]?.summary;
