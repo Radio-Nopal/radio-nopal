@@ -1,31 +1,13 @@
 import React from 'react';
 import { PortableText } from '@portabletext/react';
+import PortableImage from './PortableImage';
+import ImageGallery from './ImageGallery';
 // import { getImageDimensions } from '@sanity/asset-utils';
-import { urlDeImagen } from '../util/sanityClient';
-
-function SampleImageComponent({ value, isInline }) {
-  // const { width, height } = getImageDimensions(value);
-  return (
-    <img
-      src={urlDeImagen(value)?.url()}
-      alt={value?.alt || ' '}
-      loading="lazy"
-      className="rounded-3xl w-full"
-      style={{
-        margin: 'auto',
-        // Display alongside text if image appears inside a block text span
-        display: isInline ? 'inline-block' : 'block',
-
-        // Avoid jumping around with aspect-ratio CSS property
-        // aspectRatio: width / height,
-      }}
-    />
-  );
-}
 
 const myPortableTextComponents = {
   types: {
-    image: SampleImageComponent,
+    image: PortableImage,
+    imageGallery: ImageGallery,
   },
 
   marks: {
