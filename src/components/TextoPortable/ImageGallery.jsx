@@ -8,10 +8,16 @@ const handleDragStart = (e) => e.preventDefault();
 
 export default function ImageGallery({ value }) {
   const { images } = value;
-
   const slides = images.map((image) => (
-    <img alt="" style={{ height: '100%' }} src={image.asset ? urlDeImagen(image)?.url() : ''} onDragStart={handleDragStart} role="presentation" />
+    <img
+      className="item"
+      alt=""
+      src={image.asset ? urlDeImagen(image)?.url() : ''}
+      onDragStart={handleDragStart}
+      role="presentation"
+    />
   ));
+
   return (
     <AliceCarousel
       disableButtonsControls
