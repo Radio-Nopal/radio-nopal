@@ -1,3 +1,68 @@
+import React from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import { urlDeImagen } from '../../util/sanityClient';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import './ImageGallery.scss';
+
+const handleDragStart = (e) => e.preventDefault();
+
+export default function ImageGallery({ value }) {
+  const { images } = value;
+
+  const slides = images.map((image) => (
+    <img alt="" style={{ height: '100%' }} src={image.asset ? urlDeImagen(image)?.url() : ''} onDragStart={handleDragStart} role="presentation" />
+  ));
+  return (
+    <AliceCarousel
+      disableButtonsControls
+      mouseTracking
+      items={slides}
+    />
+  );
+}
+
+/*
+
+import React from 'react';
+import Slider from 'react-slick';
+import { urlDeImagen } from '../../util/sanityClient';
+
+export default function ImageGallery({ value }) {
+  console.log({ value });
+  const { images } = value;
+  const settings = {
+    dots: true,
+    autoplay: true,
+    infinite: true,
+    speed: 500,
+    arrows: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // eslint-disable-next-line react/no-unstable-nested-components
+    appendDots: (dots) => <ul>{dots}</ul>,
+  };
+
+  const slides = images.map((image) => (
+    <img
+      key={image._key}
+      src={image.asset ? urlDeImagen(image)?.url() : ''}
+      width={800}
+      height={400}
+      alt={image.alt}
+      className="h-[400px] object-cover"
+    />
+  ));
+  return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <Slider {...settings}>
+      {slides}
+    </Slider>
+  );
+}
+/*
+
+/*
+
 import React, { useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { urlDeImagen } from '../../util/sanityClient';
@@ -61,3 +126,5 @@ export default function ImageGallery({ value }) {
     </div>
   );
 }
+
+*/
