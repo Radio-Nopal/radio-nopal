@@ -39,7 +39,6 @@ function Calendar({ view }) {
           timeZone={browserTimeZone}
           locale={esLocale}
           plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
-          weekends={false}
           height="auto"
           ref={calendarRef}
           initialView={view}
