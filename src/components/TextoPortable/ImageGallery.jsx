@@ -20,6 +20,7 @@ export default function ImageGallery({ value }) {
 
   return (
     <AliceCarousel
+      autoHeight
       disableButtonsControls
       mouseTracking
       items={slides}
