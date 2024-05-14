@@ -4,6 +4,7 @@ import { urlDeImagen } from '../../util/sanityClient';
 function PortableImage({ value, isInline }) {
   // const { width, height } = getImageDimensions(value);
   return (
+    urlDeImagen(value) && (
     <img
       src={urlDeImagen(value)?.url()}
       alt={value?.alt || ' '}
@@ -18,6 +19,7 @@ function PortableImage({ value, isInline }) {
         // aspectRatio: width / height,
       }}
     />
+    )
   );
 }
 

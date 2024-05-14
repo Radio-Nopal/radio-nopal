@@ -13,7 +13,6 @@ function getCalendarData(dispatch) {
     try {
       const response = await fetch(calendarUrl);
       const data = await response.json();
-      console.log({ data });
       /*
       const now = new Date();
       const currentHour = now.getHours();
