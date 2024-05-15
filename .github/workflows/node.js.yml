@@ -24,17 +24,6 @@ jobs:
         run: npm run build
         env:
           CI: false
-          REACT_APP_STREAM_URL_1: ${{ secrets.REACT_APP_STREAM_URL_1 }}
-          REACT_APP_STREAM_URL_2: ${{ secrets.REACT_APP_STREAM_URL_2 }}
-          REACT_APP_SANITY_PROJECT_ID: ${{ secrets.REACT_APP_SANITY_PROJECT_ID }}
-          REACT_APP_SANITY_DATASET: ${{ secrets.REACT_APP_SANITY_DATASET }}
-          REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID }}
-          REACT_APP_CALENDAR_ID_1: ${{ secrets.REACT_APP_CALENDAR_ID_1 }}
-          REACT_APP_CALENDAR_ID_2: ${{ secrets.REACT_APP_CALENDAR_ID_2 }}
-          REACT_APP_GOOGLE_CALENDAR_API_KEY_1: ${{ secrets.REACT_APP_GOOGLE_CALENDAR_API_KEY_1 }}
-          REACT_APP_GOOGLE_CALENDAR_API_KEY_2: ${{ secrets.REACT_APP_GOOGLE_CALENDAR_API_KEY_2 }}
-          REACT_APP_MENSAJITO_SOCKET_URL: ${{ secrets.REACT_APP_MENSAJITO_SOCKET_URL }}
-
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
