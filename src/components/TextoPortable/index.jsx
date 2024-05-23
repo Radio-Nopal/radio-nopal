@@ -20,6 +20,12 @@ const myPortableTextComponents = {
       );
     },
   },
+  list: {
+    bullet: ({ children }) => <ul className="list-disc pl-5">{children}</ul>,
+  },
+  listItem: {
+    bullet: ({ children }) => <li className="mb-2">{children}</li>,
+  },
 };
 
 function TextoPortable({ value, className = '' }) {
