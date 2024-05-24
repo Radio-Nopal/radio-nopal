@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { client } from '../util/sanityClient';
 import Page from '../components/Page';
-import ListaDePersonas from '../components/ListaDePersonas';
+import ListaDeLugaresQueNosApoyan from '../components/ListaDeLugaresQueNosApoyan';
 
-function Somos() {
+function LugaresQueNosApoyan() {
   const [datosDePagina, setDatosDePagina] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const query = ' *[_type == "pagina" && slug.current == "somos"]';
+    const query = ' *[_type == "pagina" && slug.current == "lugares-que-nos-apoyan"]';
 
     client
       .fetch(query)
@@ -18,13 +18,12 @@ function Somos() {
       })
       .catch((err) => console.error(err));
   }, []);
-
   return (
     <Page datosDePagina={datosDePagina} isLoading={isLoading}>
       <br />
-      <ListaDePersonas />
+      <ListaDeLugaresQueNosApoyan />
     </Page>
   );
 }
 
-export default Somos;
+export default LugaresQueNosApoyan;

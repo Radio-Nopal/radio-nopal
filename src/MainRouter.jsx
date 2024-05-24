@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import SearchResults from './pages/SearchResults';
 import Archivo from './pages/Archivo';
 import Somos from './pages/Somos';
+import LugaresQueNosApoyan from './pages/LugaresQueNosApoyan';
 import Programacion from './pages/Programacion';
 import ScrollToTop from './util/ScrollToTop';
 import getStreamingStatus from './util/getStreamingStatus';
@@ -39,6 +40,7 @@ function MainRouter() {
         <Route exact path="/busqueda/:searchTerm" element={<SearchResults />} />
         <Route exact path="/archivo" element={<Archivo />} />
         <Route exact path="/somos" element={<Somos />} />
+        <Route exact path="/lugares-que-nos-apoyan" element={<LugaresQueNosApoyan />} />
         <Route exact path="/programacion" element={<Programacion />} />
         <Route exact path="/:slug" element={<Programa />} />
         <Route exact path="" element={<Home />} />
