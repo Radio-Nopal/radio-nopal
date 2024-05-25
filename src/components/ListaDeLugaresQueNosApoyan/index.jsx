@@ -94,7 +94,7 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
     <div key={_id} className="lista-de-lugares">
       <Link to={sitioWeb || 'www.radionopal.com'} target="_blank" rel="noopener noreferrer">
         <div
-          className="md:h-32 h-52 bg-cover bg-center rounded-md"
+          className="md:h-32 h-52 bg-cover bg-center rounded-3xl"
           style={{
             backgroundImage: `url(${obtenerUrlDePrimeraImagen(fotos)})`,
             backgroundColor: 'black',
