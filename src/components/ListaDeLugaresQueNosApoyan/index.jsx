@@ -66,7 +66,7 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
 
   // Obtener todas las categorías únicas
   const todasLasCategorias = [...new Set(datos.flatMap(({ categorias }) => categorias))];
-
+  console.log({ todasLasCategorias });
   // Filtrar los lugares por las categorías seleccionadas
   const lugaresFiltrados = categoriasSeleccionadas.length > 0
     ? datos.filter(
@@ -94,7 +94,7 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
     <div key={_id} className="lista-de-lugares">
       <Link to={sitioWeb || 'www.radionopal.com'} target="_blank" rel="noopener noreferrer">
         <div
-          className="md:h-32 h-52 bg-cover bg-center"
+          className="md:h-32 h-52 bg-cover bg-center rounded-md"
           style={{
             backgroundImage: `url(${obtenerUrlDePrimeraImagen(fotos)})`,
             backgroundColor: 'black',
@@ -121,7 +121,7 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
   ));
   return (
     <>
-      <div className="categorias-chips">
+      <div className="categorias-chips sticky md:top-32 top-44 bg-white py-4">
         {todasLasCategorias.map((categoria) => (
           <Chip
             key={categoria}
