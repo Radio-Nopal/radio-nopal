@@ -167,7 +167,7 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
   return (
     <>
       <div className="categorias-chips sticky md:top-32 top-44 bg-white py-4">
-        <Marquee pauseOnHover speed={70}>
+        <Marquee pauseOnHover speed={70} style={{ overflow: 'visible' }}>
           {todasLasCategorias.map((categoria) => (
             <Chip
               key={categoria}
