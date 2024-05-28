@@ -1,8 +1,11 @@
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
+/* eslint-disable jsx-a11y/no-distracting-elements */
 /* eslint-disable no-bitwise */
 /* eslint-disable no-plusplus */
 import React, { useState, useEffect, useRef } from 'react';
 import Chip from '@mui/material/Chip';
 import chroma from 'chroma-js';
+import Marquee from 'react-fast-marquee';
 import { Link } from 'react-router-dom';
 import { client, obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
 import TextoPortable from '../TextoPortable';
@@ -119,17 +122,19 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
             key={categoria}
             className="categoria-chip"
             style={{
-              color: stringToColor(categoria),
+              backgroundColor: stringToColor(categoria),
               // color: 'white',
               padding: '3px',
               borderRadius: '5px',
               marginRight: '0.5em',
               fontSize: '10px',
               display: 'inline-block',
+              width: '7px',
+              height: '7px',
+
             }}
-          >
-            {categoria}
-          </span>
+          />
+
         ))}
       </div>
       <Link to={sitioWeb || 'www.radionopal.com'} target="_blank" rel="noopener noreferrer">
@@ -162,24 +167,26 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
   return (
     <>
       <div className="categorias-chips sticky md:top-32 top-44 bg-white py-4">
-        {todasLasCategorias.map((categoria) => (
-          <Chip
-            key={categoria}
-            label={categoria}
-            clickable
-            className={categoriasSeleccionadas.includes(categoria) ? 'shadow-lg shadow-slate-400' : ''}
-            onClick={() => handleCategoriaClick(categoria)}
-            style={{
-              margin: '5px',
-              backgroundColor:
+        <Marquee pauseOnHover speed={70}>
+          {todasLasCategorias.map((categoria) => (
+            <Chip
+              key={categoria}
+              label={categoria}
+              clickable
+              className={categoriasSeleccionadas.includes(categoria) ? 'shadow-lg shadow-slate-400' : ''}
+              onClick={() => handleCategoriaClick(categoria)}
+              style={{
+                margin: '5px',
+                backgroundColor:
                 stringToColorWithOpacity(
                   categoria,
                   categoriasSeleccionadas.includes(categoria) ? 1 : 0.4,
                 ),
-              color: 'black',
-            }}
-          />
-        ))}
+                color: 'black',
+              }}
+            />
+          ))}
+        </Marquee>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 pt-8 gap-8">
         {listaDeLugares}
