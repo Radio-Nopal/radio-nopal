@@ -51,6 +51,10 @@ function Menu({ showMenu, ocultarMenu }) {
         <li>
           <NavLink reloadDocument to="/info/apoyanos" onClick={handleCloseMenu}>Apóyanos</NavLink>
         </li>
+
+        <li>
+          <NavLink reloadDocument to="/lugares-que-nos-apoyan" onClick={handleCloseMenu}>Lugares que nos apoyan</NavLink>
+        </li>
         <br />
         <li>
           <SearchBar ocultarMenu={ocultarMenu} />

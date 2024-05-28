@@ -1,11 +1,33 @@
+/* eslint-disable no-bitwise */
+/* eslint-disable no-plusplus */
 import React, { useState, useEffect, useRef } from 'react';
 import Chip from '@mui/material/Chip';
+import chroma from 'chroma-js';
 import { Link } from 'react-router-dom';
 import { client, obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
 import TextoPortable from '../TextoPortable';
 import ContactLinks from '../HostsInfo/ContactLinks';
 import Loader from '../Loader';
 import './ListaDeLugares.scss';
+
+const generateColorScale = (numColors) => chroma.scale('Spectral').mode('lch').colors(numColors);
+
+const colors = generateColorScale(22);
+
+const stringToColor = (string) => {
+  let hash = 0;
+  for (let i = 0; i < string.length; i++) {
+    hash = string.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const colorIndex = Math.abs(hash % colors.length);
+  return colors[colorIndex];
+};
+
+const stringToColorWithOpacity = (string, opacity) => {
+  const color = stringToColor(string);
+  const [r, g, b] = chroma(color).rgb();
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+};
 
 function ListaDeLugaresQueNosApoyan({ searchTerm }) {
   const [datos, setDatos] = useState([]);
@@ -62,11 +84,10 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
   useEffect(() => {
     fetchNextPage('', []);
   }, [searchTerm]);
-  console.log({ datos });
 
   // Obtener todas las categorías únicas
   const todasLasCategorias = [...new Set(datos.flatMap(({ categorias }) => categorias))];
-  console.log({ todasLasCategorias });
+
   // Filtrar los lugares por las categorías seleccionadas
   const lugaresFiltrados = categoriasSeleccionadas.length > 0
     ? datos.filter(
@@ -81,7 +102,7 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
   };
 
   const listaDeLugares = lugaresFiltrados?.map(({
-    /*  categorias, */
+    categorias,
     beneficios,
     descripcion,
     direccion,
@@ -92,6 +113,25 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
     sitioWeb,
   }) => (
     <div key={_id} className="lista-de-lugares">
+      <div className="categorias text-ellipsis overflow-hidden truncate">
+        {categorias.map((categoria) => (
+          <span
+            key={categoria}
+            className="categoria-chip"
+            style={{
+              color: stringToColor(categoria),
+              // color: 'white',
+              padding: '3px',
+              borderRadius: '5px',
+              marginRight: '0.5em',
+              fontSize: '10px',
+              display: 'inline-block',
+            }}
+          >
+            {categoria}
+          </span>
+        ))}
+      </div>
       <Link to={sitioWeb || 'www.radionopal.com'} target="_blank" rel="noopener noreferrer">
         <div
           className="md:h-32 h-52 bg-cover bg-center rounded-3xl"
@@ -127,8 +167,17 @@ function ListaDeLugaresQueNosApoyan({ searchTerm }) {
             key={categoria}
             label={categoria}
             clickable
+            className={categoriasSeleccionadas.includes(categoria) ? 'shadow-lg shadow-slate-400' : ''}
             onClick={() => handleCategoriaClick(categoria)}
-            color={categoriasSeleccionadas.includes(categoria) ? 'primary' : 'default'}
+            style={{
+              margin: '5px',
+              backgroundColor:
+                stringToColorWithOpacity(
+                  categoria,
+                  categoriasSeleccionadas.includes(categoria) ? 1 : 0.4,
+                ),
+              color: 'black',
+            }}
           />
         ))}
       </div>
