@@ -9,4 +9,12 @@
         mix-blend-mode: exclusion;
         filter: invert(100%);
     }
+    .alice-carousel {
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: absolute;
+    }
 }
+
+
+

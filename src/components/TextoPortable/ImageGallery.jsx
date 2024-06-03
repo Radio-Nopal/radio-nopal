@@ -8,22 +8,30 @@ const handleDragStart = (e) => e.preventDefault();
 
 export default function ImageGallery({ value }) {
   const { images } = value;
-  const slides = images.map((image) => (
-    <img
-      className="item"
-      alt=""
-      src={image.asset ? urlDeImagen(image)?.url() : ''}
-      onDragStart={handleDragStart}
-      role="presentation"
-    />
-  ));
+  console.log({ images });
+  const slides = images.map((image) => {
+    console.log({ image });
+    return (
+      <div
+        className="item rounded-3xl"
+        alt=""
+        style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: image.asset ? `url(${urlDeImagen(image)?.url()})` : '' }}
+        onDragStart={handleDragStart}
+        role="presentation"
+      />
+    );
+  });
 
   return (
     <AliceCarousel
-      autoHeight
       disableButtonsControls
       mouseTracking
       items={slides}
+      autoPlay
+      infinite
+      animationDuration="1000"
+      autoPlayInterval="4000"
+      autoPlayStrategy="none"
     />
   );
 }

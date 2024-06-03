@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Calendar from '../../components/Calendar/Calendar';
 import SocialNetworksLinks from '../../components/SocialNetworksLinks';
+import ImageGallery from '../../components/TextoPortable/ImageGallery';
 import { useViewport } from '../../util/viewPort';
 
 import radionopalLogo from '../../assets/images/logo.svg';
@@ -37,37 +38,44 @@ function Home() {
   } = datosDePagina;
 
   const imagenDeEncabezado = obtenerUrlDePrimeraImagen(imagenesCabecera);
+
+  console.log({ imagenesCabecera });
+  const images = imagenesCabecera?.map(({ imagen }) => imagen);
   return (
     <>
       <Header />
       <div
-        className="home__header p-4 rounded-3xl"
-        style={{
-          backgroundImage: `url(${imagenDeEncabezado || 'none'})`,
-        }}
+        className="home__header rounded-3xl"
       >
-        <div className="m-auto 2xl:max-w-7xl h-full">
+        <div className="absolute w-full">
+          {imagenDeEncabezado && <ImageGallery value={{ images }} />}
+        </div>
+        <div className="p-4" style={{ height: '650px' }}>
+          <div className="m-auto 2xl:max-w-7xl h-full">
 
-          <div className="home__logo">
-            <Tilt>
-              <img
-                src={radionopalLogo}
-                className="m-auto"
-                alt="Radio Nopal logo"
-              />
-            </Tilt>
+            <div className="home__logo">
+              <Tilt>
+                <img
+                  src={radionopalLogo}
+                  className="m-auto"
+                  alt="Radio Nopal logo"
+                />
+              </Tilt>
+            </div>
+
+          </div>
+
+          <div
+            className="relative h-0"
+            style={{
+              top: '-6vh',
+            }}
+          >
+            <SocialNetworksLinks color={colorFondo?.hex} />
           </div>
 
         </div>
 
-        <div
-          className="relative h-0"
-          style={{
-            top: '-6vh',
-          }}
-        >
-          <SocialNetworksLinks color={colorFondo?.hex} />
-        </div>
       </div>
 
       <PageContent
