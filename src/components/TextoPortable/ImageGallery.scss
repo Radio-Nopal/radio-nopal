@@ -1,11 +1,17 @@
 
-.alice-carousel__stage {
-    display: flex;
+.alice-carousel {
+    &__stage {
+        display: flex;
+    }
+    &__stage-item {
+        flex: 1 0 auto;
+        height: auto;
+    }
+    &__dots {
+        margin: 0px;
+    }
 }
-.alice-carousel__stage-item {
-    flex: 1 0 auto;
-    height: auto;
-}
+
 .item {
-    height: 600px;
+    height: 80vh;
 }

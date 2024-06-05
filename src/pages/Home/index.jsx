@@ -50,7 +50,7 @@ function Home() {
         <div className="absolute w-full">
           {imagenDeEncabezado && <ImageGallery value={{ images }} />}
         </div>
-        <div className="p-4" style={{ height: '600px' }}>
+        <div className="p-4" style={{ height: '80vh' }}>
           <div className="m-auto 2xl:max-w-7xl h-full">
 
             <div className="home__logo">
