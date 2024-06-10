@@ -1,14 +1,16 @@
 'use client';
 
 import React from 'react';
-import { useParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation'
 import Page from '../Page';
 import PagesList from '../PagesList/PagesList';
 import ListaDeProgramas from '../ListaDeProgramas';
 import ListaDePersonas from '../ListaDePersonas';
 
 function SearchResults() {
-  const { searchTerm } = useParams();
+  const searchParams = useSearchParams();
+  const searchTerm = searchParams.get('termino');
+
   const datosDePagina = {
     titulo: 'Búsqueda',
     descripcion: `Resultados de la búsqueda: ${searchTerm}`,
