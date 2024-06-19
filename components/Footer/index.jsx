@@ -1,9 +1,9 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import nopalLogo from '../../assets/images/nopal.svg';
 import SocialNetworksLinks from '../SocialNetworksLinks';
 import './Footer.scss';
-import Image from 'next/image';
 
 function Footer() {
   return (
@@ -33,8 +33,10 @@ function Footer() {
           <Link href="/">
             <Image
               src={nopalLogo}
-              className="footer__nopal-img invert-svg m-auto"
+              className="invert-svg m-auto"
               alt="Radio Nopal logo"
+              width={'auto'}
+              height={60}
             />
           </Link>
         </div>

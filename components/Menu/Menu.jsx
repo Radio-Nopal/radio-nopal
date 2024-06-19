@@ -82,7 +82,8 @@ function Menu({ showMenu, ocultarMenu }) {
           <Link href="/" onClick={handleCloseMenu}>
             <Image
               src={nopalLogo}
-              className="footer__nopal-img"
+              width={'auto'}
+              height={60}
               alt="Radio Nopal logo"
             />
           </Link>

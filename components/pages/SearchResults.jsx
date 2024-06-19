@@ -7,9 +7,7 @@ import PagesList from '../PagesList/PagesList';
 import ListaDeProgramas from '../ListaDeProgramas';
 import ListaDePersonas from '../ListaDePersonas';
 
-function SearchResults() {
-  const searchParams = useSearchParams();
-  const searchTerm = searchParams.get('termino');
+function SearchResults({ searchTerm }) {
 
   const datosDePagina = {
     titulo: 'Búsqueda',

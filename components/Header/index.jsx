@@ -43,7 +43,7 @@ function Header() {
               <div className="flex items-center w-full">
                 <Link href="/">
                   <Tilt>
-                    <Image className="header__logo mr-4" src={nopalLogo} alt="Radio Nopal logo" width={175} />
+                    <Image className="header__logo mr-4" src={nopalLogo} alt="Radio Nopal logo" width={175} height={60} />
                   </Tilt>
                 </Link>
               </div>
