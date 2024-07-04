@@ -1,0 +1,20 @@
+.home {
+    &__header {
+        height: 80vh;
+        background-position: center center;
+        background-size: cover;
+    }
+    &__logo {
+        width: 7rem;
+        mix-blend-mode: overlay;
+        filter: invert(100%);
+    }
+    .alice-carousel {
+        border-radius: 1.5rem;
+        overflow: hidden;
+        position: absolute;
+    }
+}
+
+
+

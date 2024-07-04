@@ -4,6 +4,7 @@ import GenericPage from './pages/GenericPage';
 import Programa from './pages/Programa';
 import Persona from './pages/Persona';
 import Home from './pages/Home';
+import ChatTest from './pages/ChatTest';
 import SearchResults from './pages/SearchResults';
 import Archivo from './pages/Archivo';
 import Somos from './pages/Somos';
@@ -43,6 +44,7 @@ function MainRouter() {
         <Route exact path="/lugares-que-nos-apoyan" element={<LugaresQueNosApoyan />} />
         <Route exact path="/programacion" element={<Programacion />} />
         <Route exact path="/:slug" element={<Programa />} />
+        <Route exact path="/chat" element={<ChatTest />} />
         <Route exact path="" element={<Home />} />
       </Routes>
     </HashRouter>

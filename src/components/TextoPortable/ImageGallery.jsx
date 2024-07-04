@@ -8,19 +8,15 @@ const handleDragStart = (e) => e.preventDefault();
 
 export default function ImageGallery({ value }) {
   const { images } = value;
-  console.log({ images });
-  const slides = images.map((image) => {
-    console.log({ image });
-    return (
-      <div
-        className="item rounded-3xl"
-        alt=""
-        style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: image.asset ? `url(${urlDeImagen(image)?.url()})` : '' }}
-        onDragStart={handleDragStart}
-        role="presentation"
-      />
-    );
-  });
+  const slides = images.map((image) => (
+    <div
+      className="item rounded-3xl"
+      alt=""
+      style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: image.asset ? `url(${urlDeImagen(image)?.url()})` : '' }}
+      onDragStart={handleDragStart}
+      role="presentation"
+    />
+  ));
 
   return (
     <AliceCarousel
