@@ -8,8 +8,8 @@ import Calendar from '../../components/Calendar/Calendar';
 import SocialNetworksLinks from '../../components/SocialNetworksLinks';
 import ImageGallery from '../../components/TextoPortable/ImageGallery';
 import ChatComponent from '../../components/Chat/ChatComponent';
+import TelegramWidget from '../../components/Chat/TelegramWidget';
 import { useViewport } from '../../util/viewPort';
-
 import radionopalLogo from '../../assets/images/logo.svg';
 import './Home.scss';
 
@@ -80,6 +80,7 @@ function ChatTest() {
         isLoading={isLoading}
       />
       <ChatComponent />
+      <TelegramWidget />
       <div className="max-w-4xl m-auto p-12 py-32 text-justify">
         <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
       </div>
