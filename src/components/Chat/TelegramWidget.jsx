@@ -15,7 +15,7 @@ function TelegramWidget() {
     document.getElementById('telegram-widget').appendChild(script);
   }, []);
 
-  return <div id="telegram-widget" />;
+  return <div id="telegram-widget" className="max-w-4xl m-auto py-6" />;
 }
 
 export default TelegramWidget;
