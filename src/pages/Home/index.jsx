@@ -78,7 +78,7 @@ function Home() {
         contenido={contenido}
         isLoading={isLoading}
       />
-      <div className="max-w-4xl m-auto p-12 py-32 text-justify">
+      <div className="max-w-4xl m-auto p-12 pt-32 text-justify">
         <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
       </div>
       <TelegramWidget />
