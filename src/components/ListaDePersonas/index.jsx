@@ -20,7 +20,7 @@ function ListaDePersonas({ searchTerm }) {
     }
     setIsLoading(true);
 
-    const query = `*[_type == "persona" ${search} ${id ? ` && _id > '${id}'` : ''}] | order(_id) [0...12] {
+    const query = `*[_type == "persona" && archivado != true ${search} ${id ? ` && _id > '${id}'` : ''}] | order(_id) [0...12] {
       ..., 
       "programas": *[_type=='programa' && references(^._id)] { titulo, slug }
     }`;

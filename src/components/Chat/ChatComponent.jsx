@@ -88,6 +88,7 @@ function ChatComponent() {
       ref={chatContainer}
       className="chatbox chatbox--show"
     >
+      <script async src="https://comments.app/js/widget.js?3" data-comments-app-website="Q7bEfH3s" data-limit="5" data-color="E22F38" data-outlined="1" />
       <div className="chatbox__message-list-container">
         <div className="chatbox__message-list">
           <List
