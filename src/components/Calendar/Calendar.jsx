@@ -7,7 +7,9 @@ import googleCalendarPlugin from '@fullcalendar/google-calendar';
 import esLocale from '@fullcalendar/core/locales/es';
 import './Calendar.scss';
 
-function Calendar({ view }) {
+function Calendar({
+  view, googleCalendarApiKey, googleCalendarId, titulo,
+}) {
   const navigate = useNavigate();
   const calendarRef = useRef();
 
@@ -32,7 +34,7 @@ function Calendar({ view }) {
   return (
     <>
       <span className="text-xl mt-14" style={{ fontFamily: 'Circular Std Black' }}>
-        Esta semana en Radio Nopal
+        {titulo}
       </span>
       <div className="calendar mb-14">
         <FullCalendar
@@ -42,7 +44,7 @@ function Calendar({ view }) {
           height="auto"
           ref={calendarRef}
           initialView={view}
-          googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_1}
+          googleCalendarApiKey={googleCalendarApiKey}
           eventTimeFormat={{
             hour: '2-digit',
             minute: '2-digit',
@@ -55,7 +57,7 @@ function Calendar({ view }) {
             }
           }}
           events={{
-            googleCalendarId: process.env.REACT_APP_CALENDAR_ID_1,
+            googleCalendarId,
             className: 'gcal-event',
           }}
         />

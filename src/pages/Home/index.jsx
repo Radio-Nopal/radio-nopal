@@ -79,7 +79,20 @@ function Home() {
         isLoading={isLoading}
       />
       <div className="max-w-4xl m-auto p-12 pt-32 text-justify">
-        <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
+        <Calendar
+          view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
+          googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_1}
+          googleCalendarId={process.env.REACT_APP_CALENDAR_ID_1}
+          titulo="Esta semana en Radio Nopal"
+        />
+      </div>
+      <div className="max-w-4xl m-auto px-12 text-justify">
+        <Calendar
+          view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
+          googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_2}
+          googleCalendarId={process.env.REACT_APP_CALENDAR_ID_2}
+          titulo="Esta semana desde el Tamayo"
+        />
       </div>
       <TelegramWidget />
       <Footer />
