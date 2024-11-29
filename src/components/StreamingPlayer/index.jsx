@@ -16,6 +16,15 @@ function StreamingPlayer({ streamingId }) {
         action: `Hizo click en botón de play ${streamingId}`,
       });
       try {
+        Object.keys(streams).forEach((id) => {
+          if (id !== streamingId) {
+            const otherAudioElement = document.getElementById(`audio-player-${id}`);
+            if (otherAudioElement) {
+              otherAudioElement.pause();
+            }
+            dispatch({ type: 'playing', payload: false, streamingId: id });
+          }
+        });
         audioElement.play();
       } catch (e) {
         console.warn(e);
