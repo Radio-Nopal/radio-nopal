@@ -2,12 +2,21 @@ import React from 'react';
 import { PortableText } from '@portabletext/react';
 import PortableImage from './PortableImage';
 import ImageGallery from './ImageGallery';
-// import { getImageDimensions } from '@sanity/asset-utils';
 
 const myPortableTextComponents = {
   types: {
     image: PortableImage,
     imageGallery: ImageGallery,
+    embed: ({ value }) => {
+      const { iframeHtml } = value;
+      if (!iframeHtml) return null;
+      return (
+        <div
+          style={{ margin: '20px 0' }}
+          dangerouslySetInnerHTML={{ __html: iframeHtml }}
+        />
+      );
+    },
   },
 
   marks: {
