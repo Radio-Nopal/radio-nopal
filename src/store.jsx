@@ -13,6 +13,11 @@ const initialState = {
       nowPlaying: '',
       isOnline: false,
     },
+    3: {
+      playing: false,
+      nowPlaying: '',
+      isOnline: false,
+    },
   },
 };
 

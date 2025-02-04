@@ -43,7 +43,9 @@ function StreamingPlayer({ streamingId }) {
   };
 
   const borderColorClass = isOnline ? 'border-red-600' : 'border-gray-600';
-
+  if (!isOnline) {
+    return <div />;
+  }
   return (
 
     <button
