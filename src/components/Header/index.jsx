@@ -75,7 +75,7 @@ function Header() {
           <StreamingStatusIndicator />
           <StreamingPlayer streamingId={1} />
           <StreamingPlayer streamingId={2} />
-          <StreamingPlayer streamingId={3} />
+          <StreamingPlayer streamingId={3} nombreDeStream="Castillo De Chapultepec" />
         </div>
       </div>
     </div>

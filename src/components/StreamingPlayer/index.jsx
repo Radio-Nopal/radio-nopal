@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import { store } from '../../store';
 import './StreamingPlayer.scss';
 
-function StreamingPlayer({ streamingId }) {
+function StreamingPlayer({ streamingId, nombreDeStream }) {
   const { state, dispatch } = useContext(store);
   const { streams } = state;
   const { playing, isOnline, nowPlaying } = streams[streamingId];
@@ -62,7 +62,7 @@ function StreamingPlayer({ streamingId }) {
           <svg />
         </div>
         <div className="text-start col-span-6 truncate uppercase">
-          {nowPlaying}
+          {nombreDeStream ?? nowPlaying}
         </div>
         <div className="text-2xl">
           {streamingId}
