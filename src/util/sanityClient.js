@@ -15,5 +15,5 @@ export function urlDeImagen(source) {
 }
 
 export function obtenerUrlDePrimeraImagen(arrayDeImagenes) {
-  return arrayDeImagenes?.length ? urlDeImagen(arrayDeImagenes[0]?.imagen)?.url() : '';
+  return arrayDeImagenes?.length && arrayDeImagenes?.[0]?.imagen ? urlDeImagen(arrayDeImagenes[0]?.imagen)?.url() : '';
 }
