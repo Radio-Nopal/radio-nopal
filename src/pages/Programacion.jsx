@@ -26,7 +26,12 @@ function Programacion() {
   return (
     <Page datosDePagina={datosDePagina} isLoading={isLoading}>
       <br />
-      <Calendar view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'} />
+      <Calendar
+        view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
+        googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_1}
+        googleCalendarId={process.env.REACT_APP_CALENDAR_ID_1}
+        titulo="Esta semana en Radio Nopal"
+      />
       <ListaDeProgramas queryFilter="&& archivado == false" />
     </Page>
   );
