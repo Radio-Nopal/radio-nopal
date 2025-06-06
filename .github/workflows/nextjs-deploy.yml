@@ -89,5 +89,8 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
+        env:
+          REACT_APP_GOOGLE_CALENDAR_API_KEY_1: ${{ secrets.REACT_APP_GOOGLE_CALENDAR_API_KEY_1 }}
+          REACT_APP_GOOGLE_CALENDAR_API_KEY_2: ${{ secrets.REACT_APP_GOOGLE_CALENDAR_API_KEY_1 }}
         id: deployment
         uses: actions/deploy-pages@v4
