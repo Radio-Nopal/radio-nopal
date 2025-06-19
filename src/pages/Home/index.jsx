@@ -37,7 +37,6 @@ function Home() {
   } = datosDePagina;
 
   const imagenDeEncabezado = obtenerUrlDePrimeraImagen(imagenesCabecera);
-  const images = imagenesCabecera?.map(({ imagen }) => imagen);
   return (
     <>
       <Header />
@@ -45,7 +44,7 @@ function Home() {
         className="home__header rounded-3xl"
       >
         <div className="absolute w-full">
-          {imagenDeEncabezado && <ImageGallery value={{ images }} />}
+          {imagenDeEncabezado && <ImageGallery imagenesCabecera={imagenesCabecera} />}
         </div>
         <div className="p-4" style={{ height: '80vh' }}>
           <div className="m-auto 2xl:max-w-7xl h-full">
