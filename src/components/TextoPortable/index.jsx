@@ -21,9 +21,12 @@ const myPortableTextComponents = {
 
   marks: {
     link: ({ children, value }) => {
-      const rel = !value?.href?.startsWith('/') ? 'noreferrer noopener' : undefined;
+      const isExternal = !value?.href?.startsWith('/');
+      const target = value?.blank ? '_blank' : undefined;
+      const rel = isExternal ? 'noreferrer noopener' : undefined;
+
       return (
-        <a href={value?.href} rel={rel}>
+        <a href={value?.href} target={target} rel={rel}>
           {children}
         </a>
       );
