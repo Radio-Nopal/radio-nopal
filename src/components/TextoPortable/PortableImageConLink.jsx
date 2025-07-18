@@ -22,7 +22,7 @@ function PortableImage({ value, isInline }) {
   );
 
   return enlace ? (
-    <a href={enlace} target={target} rel="noopener noreferrer">
+    <a href={enlace} target={target ? '_blank' : '_self'} rel="noopener noreferrer">
       {imageElement}
     </a>
   ) : (
