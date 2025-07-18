@@ -1,10 +1,12 @@
 import React from 'react';
 import { PortableText } from '@portabletext/react';
 import PortableImage from './PortableImage';
+import PortableImageConLink from './PortableImageConLink';
 import ImageGallery from './ImageGallery';
 
 const myPortableTextComponents = {
   types: {
+    imagen: PortableImageConLink,
     image: PortableImage,
     imageGallery: ImageGallery,
     embed: ({ value }) => {
