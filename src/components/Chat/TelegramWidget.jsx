@@ -7,6 +7,7 @@ function TelegramWidget() {
     script.src = 'https://comments.app/js/widget.js?3';
     script.setAttribute('data-comments-app-website', 'Q7bEfH3s');
     script.setAttribute('data-limit', '5'); // Puedes personalizar esto
+    script.setAttribute('data-dark', '1');
     /*
     script.setAttribute('data-color', 'transparent'); // Puedes personalizar esto
     script.setAttribute('data-dark', '0'); // Puedes cambiar a '1' si quieres modo oscuro
