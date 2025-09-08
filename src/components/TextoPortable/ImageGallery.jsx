@@ -36,16 +36,17 @@ export default function ImageGallery({ imagenesCabecera }) {
       imageDiv
     );
   });
-
+  const multipleSlides = slides.length > 1;
   return (
-    <AliceCarousel
-      disableButtonsControls
-      mouseTracking
+   <AliceCarousel
+      disableButtonsControls={!multipleSlides}
+      disableDotsControls={!multipleSlides}
+      mouseTracking={multipleSlides}
       items={slides}
-      autoPlay
-      infinite
-      animationDuration="1000"
-      autoPlayInterval="4000"
+      autoPlay={multipleSlides}
+      infinite={multipleSlides}
+      animationDuration={1000}
+      autoPlayInterval={4000}
       autoPlayStrategy="none"
     />
   );
