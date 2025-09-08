@@ -38,7 +38,7 @@ export default function ImageGallery({ imagenesCabecera }) {
   });
   const multipleSlides = slides.length > 1;
   return (
-   <AliceCarousel
+    <AliceCarousel
       disableButtonsControls={!multipleSlides}
       disableDotsControls={!multipleSlides}
       mouseTracking={multipleSlides}
