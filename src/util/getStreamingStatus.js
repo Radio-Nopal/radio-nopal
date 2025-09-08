@@ -5,7 +5,7 @@ function getStreamingStatus(dispatch) {
   const handleSocketMessage = (msg) => {
     streams.forEach(async (stream) => {
       const { streamName, streamingId } = stream;
-      const currentlyOnline = msg.includes(streamName);
+      const currentlyOnline = msg.includes(streamName) && false;
       await dispatch({ type: 'isOnline', payload: currentlyOnline, streamingId });
     });
   };

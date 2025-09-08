@@ -1,5 +1,49 @@
-.calendar .fc {
-    td, th {
+.calendar {
+  &.dark {
+    .fc {
+      background: #1e1e1e;
+      color: #f5f5f5;
+      thead {
+        background-color: black;
+      }
+      .fc-day-today.fc-col-header-cell > .fc-scrollgrid-sync-inner {
+        color: black;
+      }
+      .fc-header-toolbar, td, th{
+        background-color: black;
+      }
+      .fc-col-header-cell > .fc-scrollgrid-sync-inner {
+        border-color: #444;
+      }
+
+      .fc-button-primary {
+        background: #2c2c2c;
+        color: #ddd;
+      }
+      .fc-button-primary:hover,
+      .fc-button-primary:active,
+      .fc-button-primary.fc-button-active {
+        background: #3a3a3a;
+        color: #fff;
+      }
+
+      .fc-day-today > .fc-daygrid-day-frame {
+        background: #2a2a2a;
+      }
+
+      .fc-daygrid-event-harness:hover {
+        background-color: #333;
+      }
+
+      .fc-event-time {
+        color: #aaa;
+      }
+    }
+  }
+
+  .fc {
+    td,
+    th {
       border-style: none !important;
     }
     .fc-toolbar.fc-header-toolbar {
@@ -10,22 +54,18 @@
     }
 
     .fc-col-header-cell > .fc-scrollgrid-sync-inner {
-      border: 1px;
-      border-bottom: 1px;
-      border-style: solid;
-      border-color: lightgray;
+      border: 1px solid lightgray;
       margin-bottom: 5px;
       border-radius: 8px;
       @media (min-width: 640px) {
         margin: 10px 10px;
-
       }
     }
 
     .fc-scrollgrid {
       border: none;
     }
-    
+
     .fc-button-primary {
       border: none;
       border-radius: 0;
@@ -33,7 +73,7 @@
       background: white;
     }
 
-    .fc-button-primary:not(:disabled):active, 
+    .fc-button-primary:not(:disabled):active,
     .fc-button-primary:not(:disabled).fc-button-active,
     .fc-button-primary:not(:disabled):active:focus,
     .fc-button-primary:not(:disabled).fc-button-active:focus,
@@ -44,25 +84,13 @@
       color: black;
       border: none;
       box-shadow: none;
-      border: none;
-      background-color: none;
     }
 
     .fc-today-button {
       display: none;
     }
-  
-    /*
-    .fc-icon-chevron-left:before,
-    .fc-icon-chevron-right:before {
-      content: "\2022";
-    }
-    .fc-daygrid-event-dot {
-      display: none;
-    }
-    */
 
-    .fc-toolbar  {
+    .fc-toolbar {
       display: inline;
       @media (min-width: 640px) {
         display: flex;
@@ -102,4 +130,5 @@
     .fc-toolbar-chunk {
       text-align: end;
     }
+  }
 }

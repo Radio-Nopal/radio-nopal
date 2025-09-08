@@ -8,7 +8,7 @@ import esLocale from '@fullcalendar/core/locales/es';
 import './Calendar.scss';
 
 function Calendar({
-  view, googleCalendarApiKey, googleCalendarId, titulo,
+  view, googleCalendarApiKey, googleCalendarId, titulo, darkMode = false,
 }) {
   const navigate = useNavigate();
   const calendarRef = useRef();
@@ -36,7 +36,7 @@ function Calendar({
       <span className="text-xl mt-14" style={{ fontFamily: 'Circular Std Black' }}>
         {titulo}
       </span>
-      <div className="calendar mb-14">
+      <div className={`calendar mb-14 ${darkMode ? 'dark' : ''}`}>
         <FullCalendar
           timeZone={browserTimeZone}
           locale={esLocale}
