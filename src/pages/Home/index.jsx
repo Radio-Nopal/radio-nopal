@@ -38,7 +38,7 @@ function Home() {
 
   const imagenDeEncabezado = obtenerUrlDePrimeraImagen(imagenesCabecera);
   return (
-    <div className="bg-black text-white">
+    <div>
       <Header />
       <div
         className="home__header rounded-3xl"
@@ -79,7 +79,6 @@ function Home() {
       />
       <div className="max-w-4xl m-auto p-12 pt-32 text-justify">
         <Calendar
-          darkMode
           view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
           googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_1}
           googleCalendarId={process.env.REACT_APP_CALENDAR_ID_1}
@@ -88,7 +87,6 @@ function Home() {
       </div>
       <div className="max-w-4xl m-auto px-12 text-justify">
         <Calendar
-          darkMode
           view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
           googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_2}
           googleCalendarId={process.env.REACT_APP_CALENDAR_ID_2}
