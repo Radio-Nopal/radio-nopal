@@ -82,7 +82,7 @@ function Home() {
           view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
           googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_1}
           googleCalendarId={process.env.REACT_APP_CALENDAR_ID_1}
-          titulo="Esta semana en Radio Nopal"
+          titulo="Radio Nopal Línea 1"
         />
       </div>
       <div className="max-w-4xl m-auto px-12 text-justify">
@@ -90,7 +90,7 @@ function Home() {
           view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
           googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_2}
           googleCalendarId={process.env.REACT_APP_CALENDAR_ID_2}
-          titulo="Esta semana desde el Tamayo"
+          titulo="Radio Nopal Línea 2"
         />
       </div>
       <TelegramWidget />
