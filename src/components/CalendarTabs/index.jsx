@@ -6,7 +6,7 @@ import calendars from '../../config/calendars';
 function CalendarTabs() {
   const { width } = useViewport();
   const breakpoint = 600;
-  const [activeTab, setActiveTab] = useState(calendars[0]?.key || 'linea1');
+  const [activeTab, setActiveTab] = useState(calendars[0]?.key);
 
   const current = calendars.find((c) => c.key === activeTab) || calendars[0];
   const view = width < breakpoint ? 'dayGridDay' : 'dayGridWeek';
