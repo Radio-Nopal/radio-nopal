@@ -28,7 +28,7 @@ function Programacion() {
       <br />
       <Calendar
         view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
-        googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_1}
+        googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY}
         googleCalendarId={process.env.REACT_APP_CALENDAR_ID_1}
         titulo="Esta semana en Radio Nopal"
       />

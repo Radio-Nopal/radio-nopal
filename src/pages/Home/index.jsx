@@ -4,19 +4,16 @@ import { client, obtenerUrlDePrimeraImagen } from '../../util/sanityClient';
 import PageContent from '../../components/Page/PageContent';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Calendar from '../../components/Calendar/Calendar';
-import SocialNetworksLinks from '../../components/SocialNetworksLinks';
+import CalendarTabs from '../../components/CalendarTabs';
 import ImageGallery from '../../components/TextoPortable/ImageGallery';
+import SocialNetworksLinks from '../../components/SocialNetworksLinks';
 import TelegramWidget from '../../components/Chat/TelegramWidget';
-import { useViewport } from '../../util/viewPort';
 import radionopalLogo from '../../assets/images/logo.svg';
 import './Home.scss';
 
 function Home() {
   const [datosDePagina, setDatosDePagina] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const { width } = useViewport();
-  const breakpoint = 600;
 
   useEffect(() => {
     const query = ' *[_type == "pagina" && slug.current == "pagina-de-inicio"]';
@@ -77,22 +74,7 @@ function Home() {
         contenido={contenido}
         isLoading={isLoading}
       />
-      <div className="max-w-4xl m-auto p-12 pt-32 text-justify">
-        <Calendar
-          view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
-          googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_1}
-          googleCalendarId={process.env.REACT_APP_CALENDAR_ID_1}
-          titulo="Radio Nopal Línea 1"
-        />
-      </div>
-      <div className="max-w-4xl m-auto px-12 text-justify">
-        <Calendar
-          view={width < breakpoint ? 'dayGridDay' : 'dayGridWeek'}
-          googleCalendarApiKey={process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY_2}
-          googleCalendarId={process.env.REACT_APP_CALENDAR_ID_2}
-          titulo="Radio Nopal Línea 2"
-        />
-      </div>
+      <CalendarTabs />
       <TelegramWidget />
       <Footer />
     </div>
