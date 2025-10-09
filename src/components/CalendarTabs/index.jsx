@@ -10,7 +10,7 @@ function CalendarTabs() {
 
   const current = calendars.find((c) => c.key === activeTab) || calendars[0];
   const view = width < breakpoint ? 'dayGridDay' : 'dayGridWeek';
-  console.log({ calendars });
+
   return (
     <div className="max-w-4xl m-auto p-12 pt-32">
       <div className="border-b border-gray-300 mb-6 flex gap-2" role="tablist" aria-label="Calendarios">

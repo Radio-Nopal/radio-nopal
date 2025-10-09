@@ -33,4 +33,31 @@
             box-shadow: 20px -15px 15px 25px rgba(0, 0, 0, 0.2);
         }
     }
+
+    @keyframes border-color-animation {
+        0% {
+            border-color: rgb(196, 212, 230);
+        }
+        25% {
+            border-color: #5fcea5;
+        }
+        50% {
+            border-color: rgb(255, 254, 192);
+        }
+        75% {
+            border-color: rgb(241, 208, 201);
+        }
+        100% {
+            border-color: rgb(196, 212, 230);
+        }
+    }
+
+    .link-comentarios a {
+        border: 2px solid;
+        padding: 0.4rem .4rem;
+        border-radius: 12px;
+        animation: border-color-animation 2s infinite linear;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: inline-block;
+    }
 }

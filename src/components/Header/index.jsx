@@ -45,7 +45,18 @@ function Header() {
                 </Link>
               </div>
             </div>
-            <div className="col-span-1 md:col-span-5 flex space-between ml-auto items-center">
+            <div className="col-span-12 md:col-span-5 flex space-between ml-auto items-center">
+              <div className="link-comentarios flex items-start mr-4">
+                <Link
+                  to="/#telegram-widget"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('telegram-widget')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  Comentarios
+                </Link>
+              </div>
               <div className="flex items-start mr-4">
                 <VolumeSlider />
               </div>
