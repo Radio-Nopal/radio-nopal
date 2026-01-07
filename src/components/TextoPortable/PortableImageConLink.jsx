@@ -5,7 +5,10 @@ function PortableImage({ value, isInline }) {
   const altText = value?.alt || ' ';
   const enlace = value?.enlace;
   const target = value?.linkTarget;
-  const imageUrl = urlDeImagen(value?.imagen)?.url();
+  const imageUrl = value?.imagen
+    ? urlDeImagen(value.imagen).width(1200).quality(80).auto('format')
+      .url()
+    : '';
   if (!imageUrl) return null;
 
   const imageElement = (
@@ -22,7 +25,11 @@ function PortableImage({ value, isInline }) {
   );
 
   return enlace ? (
-    <a href={enlace} target={target ? '_blank' : '_self'} rel="noopener noreferrer">
+    <a
+      href={enlace}
+      target={target ? '_blank' : '_self'}
+      rel="noopener noreferrer"
+    >
       {imageElement}
     </a>
   ) : (

@@ -15,5 +15,13 @@ export function urlDeImagen(source) {
 }
 
 export function obtenerUrlDePrimeraImagen(arrayDeImagenes) {
-  return arrayDeImagenes?.length && arrayDeImagenes?.[0]?.imagen ? urlDeImagen(arrayDeImagenes[0]?.imagen)?.url() : '';
+  const imagen = arrayDeImagenes?.[0]?.imagen;
+
+  if (!imagen) return '';
+
+  return urlDeImagen(imagen)
+    .width(1600)
+    .quality(75)
+    .auto('format')
+    .url();
 }

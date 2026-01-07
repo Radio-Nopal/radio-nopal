@@ -2,7 +2,10 @@ import React from 'react';
 import { urlDeImagen } from '../../util/sanityClient';
 
 function PortableImage({ value, isInline }) {
-  const imageUrl = urlDeImagen(value)?.url();
+  const imageUrl = value
+    ? urlDeImagen(value).width(1200).quality(80).auto('format')
+      .url()
+    : '';
   const altText = value?.alt || ' ';
   const enlace = value?.enlace;
 
