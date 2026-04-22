@@ -40,6 +40,15 @@ const myPortableTextComponents = {
   listItem: {
     bullet: ({ children }) => <li className="mb-2">{children}</li>,
   },
+  block: {
+    normal: ({ children }) => {
+      // Si el bloque está vacío, renderiza un salto de línea
+      if (!children || children.toString().trim() === '') {
+        return <br />;
+      }
+      return <p>{children}</p>;
+    },
+  },
 };
 
 function TextoPortable({ value, className = '' }) {
@@ -48,7 +57,9 @@ function TextoPortable({ value, className = '' }) {
       <PortableText
         value={value}
         components={myPortableTextComponents}
-        onMissingComponent={(e) => { console.warn(e); }}
+        onMissingComponent={(e) => {
+          console.warn(e);
+        }}
       />
     </div>
   );
