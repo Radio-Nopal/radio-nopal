@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Tilt } from 'react-tilt';
-import HamburgerMenu from 'react-hamburger-menu';
-import Menu from '../Menu/Menu';
-import VolumeSlider from '../VolumeSlider/VolumeSlider';
-import SearchBar from '../SearchBar/SearchBar';
-import nopalLogo from '../../assets/images/nopal.svg';
-import StreamingPlayer from '../StreamingPlayer';
-import StreamingStatusIndicator from './StreamingStatusIndicator';
-import './Header.scss';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Tilt } from "react-tilt";
+import HamburgerMenu from "react-hamburger-menu";
+import Menu from "../Menu/Menu";
+import VolumeSlider from "../VolumeSlider/VolumeSlider";
+import SearchBar from "../SearchBar/SearchBar";
+import nopalLogo from "../../assets/images/nopal.svg";
+import StreamingPlayer from "../StreamingPlayer";
+import StreamingStatusIndicator from "./StreamingStatusIndicator";
+import "./Header.scss";
 
 const initialState = {
   scroll: false,
@@ -21,10 +21,11 @@ function Header() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([e]) => e.target.classList.toggle('header--is-pinned', e.intersectionRatio < 1),
+      ([e]) =>
+        e.target.classList.toggle("header--is-pinned", e.intersectionRatio < 1),
       { threshold: [1] },
     );
-    observer.observe(document.querySelector('.header'));
+    observer.observe(document.querySelector(".header"));
   }, []);
 
   const ocultarMenu = () => {
@@ -40,7 +41,11 @@ function Header() {
               <div className="flex items-center w-full">
                 <Link to="/">
                   <Tilt>
-                    <img className="header__logo mr-4" src={nopalLogo} alt="Radio Nopal logo" />
+                    <img
+                      className="header__logo mr-4"
+                      src={nopalLogo}
+                      alt="Radio Nopal logo"
+                    />
                   </Tilt>
                 </Link>
               </div>
@@ -51,7 +56,9 @@ function Header() {
                   to="/#telegram-widget"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('telegram-widget')?.scrollIntoView({ behavior: 'smooth' });
+                    document
+                      .getElementById("telegram-widget")
+                      ?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
                   Comentarios
@@ -68,7 +75,9 @@ function Header() {
                 <HamburgerMenu
                   className="header__hamburger-menu cursor-pointer z-40"
                   isOpen={state.showMenu}
-                  menuClicked={() => setState((prev) => ({ ...prev, showMenu: !state.showMenu }))}
+                  menuClicked={() =>
+                    setState((prev) => ({ ...prev, showMenu: !state.showMenu }))
+                  }
                   width={18}
                   height={15}
                   strokeWidth={3}
@@ -86,7 +95,10 @@ function Header() {
           <StreamingStatusIndicator />
           <StreamingPlayer streamingId={1} />
           <StreamingPlayer streamingId={2} />
-          <StreamingPlayer streamingId={3} />
+          <StreamingPlayer
+            streamingId={3}
+            nombreDeStream="Hardcore Art Book Fair"
+          />
         </div>
       </div>
     </div>
