@@ -94,7 +94,7 @@ function Header() {
           <StreamingPlayer streamingId={2} />
           <StreamingPlayer
             streamingId={3}
-            nombreDeStream="Hardcore Art Book Fair"
+            nombreDeStream="Abierto Mexicano de Diseño"
           />
         </div>
       </div>

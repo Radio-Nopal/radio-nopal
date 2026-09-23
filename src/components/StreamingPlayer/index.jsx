@@ -62,7 +62,7 @@ function StreamingPlayer({ streamingId, nombreDeStream }) {
           <svg />
         </div>
         <div className="text-start col-span-6 truncate uppercase">
-          {nombreDeStream ?? nowPlaying}
+          {nowPlaying || nombreDeStream}
         </div>
         <div className="text-2xl">
           {streamingId}
