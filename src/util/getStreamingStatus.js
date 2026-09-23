@@ -10,7 +10,7 @@ function getStreamingStatus(dispatch) {
     });
   };
 
-  const socket = io(process.env.REACT_APP_MENSAJITO_SOCKET_URL, {
+  const socket = io(process.env.REACT_APP_MENSAJITO_SOCKET_URL || 'https://socket.mensajito.mx/', {
     transports: ['websocket', 'polling', 'flashsocket'],
   });
 
