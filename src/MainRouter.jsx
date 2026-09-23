@@ -14,6 +14,8 @@ import ScrollToTop from './util/ScrollToTop';
 import getStreamingStatus from './util/getStreamingStatus';
 import getCalendarData from './util/getCalendarData';
 import { store } from './store';
+import MerchStore from './pages/MerchStore';
+import ProductDetail from './pages/ProductDetail';
 
 function MainRouter() {
   const { dispatch } = useContext(store);
@@ -43,9 +45,14 @@ function MainRouter() {
         <Route exact path="/somos" element={<Somos />} />
         <Route exact path="/lugares-que-nos-apoyan" element={<LugaresQueNosApoyan />} />
         <Route exact path="/programacion" element={<Programacion />} />
+        <Route exact path="/merch-store" element={<MerchStore />} />
+        <Route exact path="/merch-store/:slug" element={<ProductDetail/>} />
         <Route exact path="/:slug" element={<Programa />} />
         <Route exact path="/chat" element={<ChatTest />} />
+        
+        
         <Route exact path="" element={<Home />} />
+        
       </Routes>
     </HashRouter>
   );
