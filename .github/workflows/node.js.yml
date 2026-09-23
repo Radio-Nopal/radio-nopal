@@ -24,12 +24,12 @@ jobs:
         run: npm run build
         env:
           CI: false
-          REACT_APP_STREAM_NAME_1: ${{ secrets.REACT_APP_STREAM_NAME_1 }}
-          REACT_APP_STREAM_NAME_2: ${{ secrets.REACT_APP_STREAM_NAME_2 }}
-          REACT_APP_STREAM_NAME_3: ${{ secrets.REACT_APP_STREAM_NAME_3 }}
-          REACT_APP_STREAM_URL_1: ${{ secrets.REACT_APP_STREAM_URL_1 }}
-          REACT_APP_STREAM_URL_2: ${{ secrets.REACT_APP_STREAM_URL_2 }}
-          REACT_APP_STREAM_URL_3: ${{ secrets.REACT_APP_STREAM_URL_3 }}
+          REACT_APP_STREAM_NAME_1: ${{ secrets.REACT_APP_STREAM_NAME_1 || 'nopalA' }}
+          REACT_APP_STREAM_NAME_2: ${{ secrets.REACT_APP_STREAM_NAME_2 || 'nopalVentana' }}
+          REACT_APP_STREAM_NAME_3: ${{ secrets.REACT_APP_STREAM_NAME_3 || '2e6953be728b' }}
+          REACT_APP_STREAM_URL_1: ${{ secrets.REACT_APP_STREAM_URL_1 || 'https://radio.mensajito.mx/nopalA' }}
+          REACT_APP_STREAM_URL_2: ${{ secrets.REACT_APP_STREAM_URL_2 || 'https://radio.mensajito.mx/nopalVentana' }}
+          REACT_APP_STREAM_URL_3: ${{ secrets.REACT_APP_STREAM_URL_3 || 'https://radio.mensajito.mx/2e6953be728b' }}
           REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
           REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}
           REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
@@ -37,10 +37,10 @@ jobs:
           REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
           REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
           REACT_APP_FIREBASE_MEASUREMENT_ID: ${{ secrets.REACT_APP_FIREBASE_MEASUREMENT_ID }}
-          REACT_APP_GOOGLE_CALENDAR_API_KEY: ${{ secrets.REACT_APP_GOOGLE_CALENDAR_API_KEY }}
-          REACT_APP_CALENDAR_ID_1: ${{ secrets.REACT_APP_CALENDAR_ID_1 }}
-          REACT_APP_CALENDAR_ID_2: ${{ secrets.REACT_APP_CALENDAR_ID_2 }}
-          REACT_APP_CALENDAR_ID_3: ${{ secrets.REACT_APP_CALENDAR_ID_3 }}
+          REACT_APP_GOOGLE_CALENDAR_API_KEY: ${{ secrets.REACT_APP_GOOGLE_CALENDAR_API_KEY || 'AIzaSyBf6VHg8Jb0wL7oVcYm0At1VjOWphAPnbk' }}
+          REACT_APP_CALENDAR_ID_1: ${{ secrets.REACT_APP_CALENDAR_ID_1 || 'hg6kmcb0vtdegapdfgjbi9rav0@group.calendar.google.com' }}
+          REACT_APP_CALENDAR_ID_2: ${{ secrets.REACT_APP_CALENDAR_ID_2 || 'b2b2dce64da4a0f43832f19ef61bdb53fd4d678252063391da9923016ff1c67c@group.calendar.google.com' }}
+          REACT_APP_CALENDAR_ID_3: ${{ secrets.REACT_APP_CALENDAR_ID_3 || '5fb491eb642ecff18eb4f278307954aa2be09d12f9c5b09d9cce40f4bbf95393@group.calendar.google.com' }}
           REACT_APP_SANITY_PROJECT_ID: ${{ secrets.REACT_APP_SANITY_PROJECT_ID || '3bcawm4g' }}
           REACT_APP_SANITY_DATASET: ${{ secrets.REACT_APP_SANITY_DATASET || 'production' }}
           REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID || 'UA-118625173-1' }}
