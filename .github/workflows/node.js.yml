@@ -41,10 +41,10 @@ jobs:
           REACT_APP_CALENDAR_ID_1: ${{ secrets.REACT_APP_CALENDAR_ID_1 }}
           REACT_APP_CALENDAR_ID_2: ${{ secrets.REACT_APP_CALENDAR_ID_2 }}
           REACT_APP_CALENDAR_ID_3: ${{ secrets.REACT_APP_CALENDAR_ID_3 }}
-          REACT_APP_SANITY_PROJECT_ID: ${{ secrets.REACT_APP_SANITY_PROJECT_ID }}
-          REACT_APP_SANITY_DATASET: ${{ secrets.REACT_APP_SANITY_DATASET }}
-          REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID }}
-          REACT_APP_MENSAJITO_SOCKET_URL: ${{ secrets.REACT_APP_MENSAJITO_SOCKET_URL }}
+          REACT_APP_SANITY_PROJECT_ID: ${{ secrets.REACT_APP_SANITY_PROJECT_ID || '3bcawm4g' }}
+          REACT_APP_SANITY_DATASET: ${{ secrets.REACT_APP_SANITY_DATASET || 'production' }}
+          REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID: ${{ secrets.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID || 'UA-118625173-1' }}
+          REACT_APP_MENSAJITO_SOCKET_URL: ${{ secrets.REACT_APP_MENSAJITO_SOCKET_URL || 'https://socket.mensajito.mx/' }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
