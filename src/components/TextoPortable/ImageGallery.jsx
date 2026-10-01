@@ -7,12 +7,11 @@ import './ImageGallery.scss';
 const handleDragStart = (e) => e.preventDefault();
 
 export default function ImageGallery({ imagenesCabecera }) {
-  const slides = imagenesCabecera.map(({ imagen, enlace }) => {
+  const slides = imagenesCabecera.map(({
+    imagen, enlace, title, fontColor,
+  }) => {
     const imageUrl = imagen?.asset
-      ? urlDeImagen(imagen)
-        .width(1600)
-        .quality(75)
-        .auto('format')
+      ? urlDeImagen(imagen).width(1600).quality(75).auto('format')
         .url()
       : '';
     const style = {
@@ -28,14 +27,30 @@ export default function ImageGallery({ imagenesCabecera }) {
         style={style}
         onDragStart={handleDragStart}
         role="presentation"
-      />
+      >
+        {title && (
+          <div
+            style={{
+              fontSize: '5rem',
+              position: 'absolute',
+              color: fontColor || 'white',
+              width: '100%',
+              height: '100%',
+              display: 'grid',
+              placeContent: 'center',
+            }}
+          >
+            {title}
+          </div>
+        )}
+      </div>
     );
-    const safeEnlace = enlace && !enlace.startsWith('http://') && !enlace.startsWith('https://')
+    const safeenlace = enlace && !enlace.startsWith('http://') && !enlace.startsWith('https://')
       ? `https://${enlace}`
       : enlace;
 
     return enlace ? (
-      <a href={safeEnlace} target="_blank" rel="noopener noreferrer">
+      <a href={safeenlace} target="_blank" rel="noopener noreferrer">
         {imageDiv}
       </a>
     ) : (
@@ -49,7 +64,7 @@ export default function ImageGallery({ imagenesCabecera }) {
       disableDotsControls={!multipleSlides}
       mouseTracking={multipleSlides}
       items={slides}
-      autoPlay={multipleSlides}
+      autoPlay={false}
       infinite={multipleSlides}
       animationDuration={1000}
       autoPlayInterval={4000}
